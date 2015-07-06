@@ -2,7 +2,6 @@
 
 This is the second custom [Ghost](http://ghost.org/) theme for [lucasktlee.com](http://lucasktlee.com/). 
 
-
 ## Copyright, license, and usage 
 
 Copyright (c) 2015 Lucas K.T. Lee. 

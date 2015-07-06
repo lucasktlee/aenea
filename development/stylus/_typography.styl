@@ -1,0 +1,98 @@
+/*  BODY AND HTML
+    ----------------------------------------    */
+html 
+    font-size: fs-base    // sets font size to 10px
+    
+body
+	background-color: c-bg
+	color: c-tx
+	font-family: ff-tx
+	font-size: fs-s-tx
+	hyphenate(auto)
+	line-height: lh-s
+	text-rendering: optimizeLegibility
+	word-wrap: break-word
+
+/*  COMMON STYLES
+    ----------------------------------------    */
+/* Zero out margins and padding */
+article,
+aside,
+blockquote,
+div,
+dl,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+ol,
+p,
+picture,
+pre,
+section,
+ul
+    margin: 0
+    padding: 0 
+
+/* Set common bottom margin for block level elements */
+blockquote,
+dl,
+ol,
+p,
+pre,
+table,
+ul,
+.footnotes
+	margin-bottom: lh-s
+	
+/* Set common padding and borders for blockquotes and preformatted text */
+blockquote,
+pre 
+	padding: 0 hs-s
+	
+/* Remove hyphenation for certain HTML elements */
+abbr,
+blockquote,
+code,
+kbd,
+pre,
+q,
+samp,
+var
+    hyphenate(none)
+
+
+/*  HORIZONTAL RULES 
+    ----------------------------------------    */
+hr 
+	border: 0
+	border-top: c-bd solid bd-w-n
+	margin: lh-s 0
+	&.w-50,
+	&.w-75
+		margin: lh-s auto 
+	&.w-50
+		width: 50%
+	&.w-75
+		width: 75%
+
+    
+/*  LINKS
+    ----------------------------------------    */
+a 
+	border-bottom: solid bd-w-n
+	text-decoration: none
+	&:link,
+	&:visited
+		border-bottom-color: 
+		color: 
+	&:active,
+	&:hover 
+		border-bottom-color: 
+		color: 
