@@ -1,0 +1,41 @@
+/*  BASIC GRID STYLES 
+    ----------------------------------------    */
+.container
+	margin: 0 auto
+	max-width: 56rem
+	min-width: 32rem
+	/* clearfix */
+	&:before,
+	&:after
+		content: ""
+		display: table 
+	&:after 
+		clear: both
+.hidden 
+	display: none
+
+
+/*  ACCESSIBILITY STYLES
+    ----------------------------------------    */
+.accessibility 
+	clip: rect(1px, 1px, 1px, 1px)
+	height: 1px
+	overflow: hidden
+	position: absolute
+	width: 1px
+	
+
+/*	PAGE FOOTER (#page-footer)
+    ----------------------------------------    */
+#page-footer 
+	background-color: c-h1
+	color: c-bd
+	padding-bottom: 2 * lh-s
+	#me, 
+	#elsewhere,
+	#disclaimer,
+	#rights
+		padding-top: lh-s
+	#me
+		border-bottom: c-h2 solid bd-w-n
+		

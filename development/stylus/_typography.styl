@@ -68,6 +68,37 @@ var
     hyphenate(none)
 
 
+/*  BLOCKQUOTES AND QUOTES
+    ----------------------------------------    */
+q:after,
+q:before 
+    content: none
+html[lang="en"],
+html[lang="en-US"]
+	q:before
+        content: "\201C"
+    q:after 
+        content: "\201D" 
+    q
+        > q:before
+            content: "\2018"
+        > q:after
+            content: "\2019"	
+
+
+/*  HEADINGS
+    ----------------------------------------    */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	font-family: ff-hd
+	font-style: normal
+	font-weight: 700
+
+
 /*  HORIZONTAL RULES 
     ----------------------------------------    */
 hr 
@@ -83,6 +114,29 @@ hr
 		width: 75%
 
     
+/*  INLINE STYLES
+    ----------------------------------------    */
+del 
+	color: c-mt
+	text-decoration: line-through
+ins 
+	color: c-h1
+	text-decoration: underline
+small 
+	font-size: fs-s-sm
+
+/* subscripts and superscripts */
+sub,
+sup 
+	font-size: fs-s-tn
+	position: relative
+	vertical-align: baseline
+sub
+	top: 0.8ex
+sup 
+	bottom: 1.0ex 
+
+
 /*  LINKS
     ----------------------------------------    */
 a 
@@ -90,9 +144,60 @@ a
 	text-decoration: none
 	&:link,
 	&:visited
-		border-bottom-color: 
-		color: 
+		border-bottom-color: c-ln
+		color: c-ln
 	&:active,
 	&:hover 
-		border-bottom-color: 
-		color: 
+		border-bottom-color: c-at 
+		color: c-at
+
+
+/*  MISCELLANEOUS TYPOGRAPHIC STYLES
+    ----------------------------------------    */
+/* text alignment */
+.center
+    text-align: center
+.left
+    text-align: left
+.right
+    text-align: right
+    
+/*	PAGE FOOTER (#page-footer)
+    ----------------------------------------    */
+#page-footer 
+	a
+		&:link,
+		&:visited
+			border-bottom-color: c-bg
+			color: c-bg
+		/*&:active,
+		&:hover 
+			border-bottom-color: 
+			color:*/ 
+	#me,
+	#elsewhere 
+		h1 
+			font-family: ff-hd
+			font-size: fs-s-h4
+			font-weight: 200
+			line-height: lh-s
+			margin-bottom: lh-s
+			text-transform: uppercase
+		p
+			font-family: ff-hd
+			font-size: fs-s-h5
+			font-weight: 200	
+			small 
+				background-color: c-h2
+				letter-spacing: 0.2rem
+				text-transform: uppercase
+				a 
+					border-bottom: 0
+					color: c-lt
+					padding: (lh-s/7) (lh-s/3)
+					
+		ul.socialmedia
+			font-family: ff-hd
+			li 
+				a 
+					border-bottom: 0

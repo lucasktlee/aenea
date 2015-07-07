@@ -182,6 +182,44 @@ td,
 th {
   padding: 0;
 }
+.container {
+  margin: 0 auto;
+  max-width: 56rem;
+  min-width: 32rem;
+/* clearfix */
+}
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+.accessibility {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+#page-footer {
+  background-color: #000;
+  color: #ddd;
+  padding-bottom: 4.2rem;
+}
+#page-footer #me,
+#page-footer #elsewhere,
+#page-footer #disclaimer,
+#page-footer #rights {
+  padding-top: 2.1rem;
+}
+#page-footer #me {
+  border-bottom: #222 solid 0.1rem;
+}
 html {
   font-size: 62.5%;
 }
@@ -250,4 +288,135 @@ var {
   -ms-hyphens: none;
   -o-hyphens: none;
   -webkit-hyphens: none;
+}
+q:after,
+q:before {
+  content: none;
+}
+html[lang="en"] q:before,
+html[lang="en-US"] q:before {
+  content: "\201C";
+}
+html[lang="en"] q:after,
+html[lang="en-US"] q:after {
+  content: "\201D";
+}
+html[lang="en"] q > q:before,
+html[lang="en-US"] q > q:before {
+  content: "\2018";
+}
+html[lang="en"] q > q:after,
+html[lang="en-US"] q > q:after {
+  content: "\2019";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+hr {
+  border: 0;
+  border-top: #ddd solid 0.1rem;
+  margin: 2.1rem 0;
+}
+hr.w-50,
+hr.w-75 {
+  margin: 2.1rem auto;
+}
+hr.w-50 {
+  width: 50%;
+}
+hr.w-75 {
+  width: 75%;
+}
+del {
+  color: #666;
+  text-decoration: line-through;
+}
+ins {
+  color: #000;
+  text-decoration: underline;
+}
+small {
+  font-size: 1.2rem;
+}
+sub,
+sup {
+  font-size: 1rem;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  top: 0.8ex;
+}
+sup {
+  bottom: 1ex;
+}
+a {
+  border-bottom: solid 0.1rem;
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  border-bottom-color: #aa3939;
+  color: #aa3939;
+}
+a:active,
+a:hover {
+  border-bottom-color: #500;
+  color: #500;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+#page-footer a:link,
+#page-footer a:visited {
+  border-bottom-color: #fff;
+  color: #fff;
+}
+#page-footer #me h1,
+#page-footer #elsewhere h1 {
+  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 200;
+  line-height: 2.1rem;
+  margin-bottom: 2.1rem;
+  text-transform: uppercase;
+}
+#page-footer #me p,
+#page-footer #elsewhere p {
+  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+#page-footer #me p small,
+#page-footer #elsewhere p small {
+  background-color: #222;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+#page-footer #me p small a,
+#page-footer #elsewhere p small a {
+  border-bottom: 0;
+  color: #999;
+  padding: 0.3rem 0.7rem;
+}
+#page-footer #me ul.socialmedia,
+#page-footer #elsewhere ul.socialmedia {
+  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+}
+#page-footer #me ul.socialmedia li a,
+#page-footer #elsewhere ul.socialmedia li a {
+  border-bottom: 0;
 }
