@@ -4,3 +4,13 @@ hyphenate(v)
 	-ms-hyphens: v
 	-o-hyphens: v
 	-webkit-hyphens: v
+
+/* clearfix to clear floating elements */	
+clearfix()
+	zoom: 1
+	&:before,
+	&:after 
+		content: ""
+		display: table
+	&:after 
+		clear: both

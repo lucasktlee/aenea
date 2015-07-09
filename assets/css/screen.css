@@ -184,9 +184,9 @@ th {
 }
 .container {
   margin: 0 auto;
-  max-width: 56rem;
-  min-width: 32rem;
+  max-width: 56.8rem;
 /* clearfix */
+  zoom: 1;
 }
 .container:before,
 .container:after {
@@ -199,6 +199,35 @@ th {
 .hidden {
   display: none;
 }
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.c-01,
+.c-02,
+.c-03,
+.c-04,
+.c-05,
+.c-06,
+.c-07,
+.c-08,
+.c-09,
+.c-10,
+.c-11,
+.c-12 {
+  margin-left: 2.1rem;
+  margin-right: 2.1rem;
+  vertical-align: top;
+  max-width: 100%;
+  zoom: 1;
+}
 .accessibility {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -206,19 +235,27 @@ th {
   position: absolute;
   width: 1px;
 }
+#page-content {
+  margin-bottom: 2.1rem;
+  margin-top: 2.1rem;
+}
 #page-footer {
   background-color: #000;
-  color: #ddd;
-  padding-bottom: 4.2rem;
+  padding: 2.1rem 0;
 }
-#page-footer #me,
-#page-footer #elsewhere,
-#page-footer #disclaimer,
-#page-footer #rights {
-  padding-top: 2.1rem;
+#page-footer #me picture {
+  float: left;
+  padding-right: 2.5rem;
+  max-height: 10.5rem;
+  max-width: 10.5rem;
 }
-#page-footer #me {
-  border-bottom: #222 solid 0.1rem;
+#page-footer #me picture img {
+  border: #000 solid 0.1rem;
+  border-radius: 7rem;
+  width: 100%;
+}
+#page-header {
+  margin-top: 2.1rem;
 }
 html {
   font-size: 62.5%;
@@ -273,7 +310,7 @@ ul,
 }
 blockquote,
 pre {
-  padding: 0 2.1rem;
+  padding: 0 2.5rem;
 }
 abbr,
 blockquote,
@@ -319,6 +356,31 @@ h6 {
   font-style: normal;
   font-weight: 700;
 }
+h1 {
+  color: #000;
+  font-size: 2.8rem;
+  line-height: 3.15rem;
+}
+h2 {
+  font-size: 2.4rem;
+  line-height: 3.15rem;
+}
+h3 {
+  font-size: 2.1rem;
+  line-height: 2.625rem;
+}
+h4 {
+  font-size: 1.8rem;
+  line-height: 2.625rem;
+}
+h5 {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+}
+h6 {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
 hr {
   border: 0;
   border-top: #ddd solid 0.1rem;
@@ -333,6 +395,13 @@ hr.w-50 {
 }
 hr.w-75 {
   width: 75%;
+}
+abbr {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+abbr[title] {
+  border-bottom: #ddd dotted 0.1rem;
 }
 del {
   color: #666;
@@ -380,43 +449,129 @@ a:hover {
 .right {
   text-align: right;
 }
+#page-content .post-content p.lede {
+  color: #000;
+  font-size: 1.6rem;
+}
+#page-content .post-header h2 {
+  color: #000;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  margin-bottom: 0;
+}
+#page-content .post-header h2 a {
+  border-bottom-width: 0;
+}
+#page-content .post-header h2 a:link,
+#page-content .post-header h2 a:visited {
+  color: #000;
+}
+#page-content .post-header h2 a:active,
+#page-content .post-header h2 a:hover {
+  color: #aa3939;
+}
+#page-content .post-header time {
+  color: #999;
+  font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+#page-content .post-header:hover time {
+  color: #666;
+}
+#page-footer p,
+#page-footer ul {
+  color: #999;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  margin-bottom: 0;
+}
+#page-footer a {
+  border-bottom-width: 0;
+}
 #page-footer a:link,
 #page-footer a:visited {
-  border-bottom-color: #fff;
-  color: #fff;
+  color: #aa3939;
 }
-#page-footer #me h1,
-#page-footer #elsewhere h1 {
+#page-footer a:active,
+#page-footer a:hover {
+  color: #ddd;
+}
+#page-footer h1 {
+  color: #ddd;
   font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
-  font-size: 1.8rem;
-  font-weight: 200;
+  font-size: 1.4rem;
+  font-weight: 300;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  letter-spacing: 0.2rem;
   line-height: 2.1rem;
   margin-bottom: 2.1rem;
   text-transform: uppercase;
 }
-#page-footer #me p,
-#page-footer #elsewhere p {
-  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
-  font-size: 1.6rem;
-  font-weight: 200;
-}
-#page-footer #me p small,
-#page-footer #elsewhere p small {
-  background-color: #222;
-  letter-spacing: 0.2rem;
+#page-footer p small {
+  background: #222;
+  border-radius: 0.3rem;
+  font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
+  padding: 0.3rem;
   text-transform: uppercase;
 }
-#page-footer #me p small a,
-#page-footer #elsewhere p small a {
-  border-bottom: 0;
-  color: #999;
-  padding: 0.3rem 0.7rem;
+#page-footer #disclaimer,
+#page-footer #elsewhere,
+#page-footer #me,
+#page-footer #site {
+  padding-bottom: 2.1rem;
 }
-#page-footer #me ul.socialmedia,
-#page-footer #elsewhere ul.socialmedia {
-  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+#page-footer #disclaimer p,
+#page-footer #elsewhere p,
+#page-footer #me p,
+#page-footer #site p {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
 }
-#page-footer #me ul.socialmedia li a,
-#page-footer #elsewhere ul.socialmedia li a {
-  border-bottom: 0;
+#page-footer #elsewhere ul {
+  font-size: 1.6rem;
+  margin-left: 0;
+  list-style: none;
+}
+#page-footer #elsewhere ul li {
+  padding-left: 3.75rem;
+}
+#page-footer #elsewhere ul li.i-500px {
+  background-image: url("../images/icon-500px-s.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+#page-footer #elsewhere ul li.i-github {
+  background-image: url("../images/icon-github-s.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+#page-footer #elsewhere ul li.i-linkedin {
+  background-image: url("../images/icon-linkedin-s.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+#page-footer #elsewhere ul li.i-twitter {
+  background-image: url("../images/icon-twitter-s.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+#page-header h1 {
+  color: #000;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  margin-left: 0;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0 #ddd;
+  text-transform: uppercase;
 }
