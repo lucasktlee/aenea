@@ -379,6 +379,22 @@ html[lang="en-US"] q > q:after {
 aside.pull {
   color: #000;
 }
+caption,
+figcaption,
+.caption {
+  color: #666;
+  font-size: 1.2rem;
+  text-align: left;
+}
+caption span,
+figcaption span,
+.caption span {
+  text-transform: uppercase;
+}
+code {
+  font-family: Consolas, "Lucida Console", "Andale Mono", monospace;
+  font-size: 1.2rem;
+}
 h1,
 h2,
 h3,
@@ -499,6 +515,9 @@ p {
   font-size: 1.4rem;
   line-height: 2.1rem;
   text-align: left;
+}
+table {
+  max-width: 100%;
 }
 .center {
   text-align: center;
