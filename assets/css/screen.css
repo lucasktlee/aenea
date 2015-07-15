@@ -242,10 +242,14 @@ th {
 #page-footer {
   background-color: #000;
   padding: 2.1rem 0;
+/* common bottom padding for each block */
+}
+#page-footer div.container div {
+  padding-bottom: 2.1rem;
 }
 #page-footer #me picture {
   float: left;
-  padding-right: 2.5rem;
+  margin-right: 2.1rem;
   max-height: 10.5rem;
   max-width: 10.5rem;
 }
@@ -253,6 +257,16 @@ th {
   border: #000 solid 0.1rem;
   border-radius: 7rem;
   width: 100%;
+}
+#page-footer #recommendedread img {
+  float: left;
+  border: #222 solid 0.3rem;
+  margin-right: 2.1rem;
+  max-height: 12.6rem;
+  max-width: 8.4rem;
+}
+#page-footer #rights {
+  margin-top: 2.1rem;
 }
 #page-header {
   margin-top: 2.1rem;
@@ -263,8 +277,9 @@ html {
 body {
   background-color: #fff;
   color: #444;
-  font-family: "Mercury SSm A", "Mercury SSm B", Georgia, serif;
+  font-family: "Mercury SSm A", "Mercury SSm B", Garvis, Arnhem, Georgia, serif;
   font-size: 1.4rem;
+  font-weight: fw-normal;
   hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -310,7 +325,7 @@ ul,
 }
 blockquote,
 pre {
-  padding: 0 2.5rem;
+  padding: 0 2.1rem;
 }
 abbr,
 blockquote,
@@ -325,6 +340,21 @@ var {
   -ms-hyphens: none;
   -o-hyphens: none;
   -webkit-hyphens: none;
+}
+blockquote {
+  border-left: #161 solid 0.6rem;
+  padding-bottom: 2.1rem;
+  padding-top: 2.1rem;
+}
+blockquote footer {
+  text-align: right;
+}
+blockquote footer cite:before {
+  content: "\2014";
+  padding-right: 0.7rem;
+}
+blockquote :last-child {
+  margin-bottom: 0;
 }
 q:after,
 q:before {
@@ -346,40 +376,62 @@ html[lang="en"] q > q:after,
 html[lang="en-US"] q > q:after {
   content: "\2019";
 }
+aside.pull {
+  color: #000;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+  font-family: "Gotham A", "Gotham B", "Proxima Nova", Gibson, sans-serif;
   font-style: normal;
   font-weight: 700;
 }
-h1 {
+h1,
+h2,
+h3 {
   color: #000;
+}
+h4,
+h5,
+h6 {
+  color: #222;
+}
+h1 {
   font-size: 2.8rem;
-  line-height: 3.15rem;
+  line-height: 4.2rem;
+  margin-bottom: 2.1rem;
 }
 h2 {
   font-size: 2.4rem;
-  line-height: 3.15rem;
+  line-height: 2.73rem;
+  margin-bottom: 2.1rem;
+  padding-bottom: 0.7rem;
+  padding-top: 0.7rem;
 }
 h3 {
   font-size: 2.1rem;
-  line-height: 2.625rem;
+  line-height: 2.1rem;
+  margin-bottom: 2.1rem;
+  padding-top: 0.7rem;
+  padding-bottom: 1.4rem;
 }
 h4 {
   font-size: 1.8rem;
-  line-height: 2.625rem;
+  line-height: 2.1rem;
+  margin-bottom: 2.1rem;
 }
 h5 {
   font-size: 1.6rem;
   line-height: 2.1rem;
+  margin-bottom: 2.1rem;
 }
 h6 {
   font-size: 1.4rem;
   line-height: 2.1rem;
+  margin-bottom: 2.1rem;
 }
 hr {
   border: 0;
@@ -402,6 +454,9 @@ abbr {
 }
 abbr[title] {
   border-bottom: #ddd dotted 0.1rem;
+}
+cite {
+  font-style: italic;
 }
 del {
   color: #666;
@@ -433,12 +488,17 @@ a {
 a:link,
 a:visited {
   border-bottom-color: #aa3939;
-  color: #aa3939;
+  color: c-ln;
 }
 a:active,
 a:hover {
   border-bottom-color: #500;
-  color: #500;
+  color: c-at;
+}
+p {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  text-align: left;
 }
 .center {
   text-align: center;
@@ -461,6 +521,9 @@ a:hover {
   -o-hyphens: none;
   -webkit-hyphens: none;
   margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 1.4rem;
 }
 #page-content .post-header h2 a {
   border-bottom-width: 0;
@@ -473,24 +536,30 @@ a:hover {
 #page-content .post-header h2 a:hover {
   color: #aa3939;
 }
-#page-content .post-header time {
-  color: #999;
-  font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
+#page-content .post-header p {
+  line-height: 2.1rem;
+  margin-bottom: 2.1rem;
 }
-#page-content .post-header:hover time {
+#page-content .post-header p time {
+  color: #999;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Proxima Nova", Gibson, sans-serif;
+  font-size: 1.2rem;
+  font-weight: fw-normal;
+}
+#page-content .post-header:hover p time {
   color: #666;
 }
 #page-footer p,
 #page-footer ul {
   color: #999;
+  font-size: 1.6rem;
   hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   -o-hyphens: none;
   -webkit-hyphens: none;
   margin-bottom: 0;
+  margin-left: 0;
 }
 #page-footer a {
   border-bottom-width: 0;
@@ -501,11 +570,10 @@ a:hover {
 }
 #page-footer a:active,
 #page-footer a:hover {
-  color: #ddd;
+  color: #fff;
 }
 #page-footer h1 {
-  color: #ddd;
-  font-family: "Gotham A", "Gotham B", Helvetica, sans-serif;
+  color: #fff;
   font-size: 1.4rem;
   font-weight: 300;
   hyphens: none;
@@ -518,60 +586,67 @@ a:hover {
   margin-bottom: 2.1rem;
   text-transform: uppercase;
 }
-#page-footer p small {
+#page-footer p small,
+#page-footer ul small {
   background: #222;
   border-radius: 0.3rem;
-  font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Proxima Nova", Gibson, sans-serif;
   padding: 0.3rem;
   text-transform: uppercase;
 }
-#page-footer #disclaimer,
-#page-footer #elsewhere,
-#page-footer #me,
-#page-footer #site {
-  padding-bottom: 2.1rem;
-}
-#page-footer #disclaimer p,
-#page-footer #elsewhere p,
-#page-footer #me p,
-#page-footer #site p {
-  font-size: 1.6rem;
-  line-height: 2.1rem;
-}
 #page-footer #elsewhere ul {
-  font-size: 1.6rem;
-  margin-left: 0;
   list-style: none;
 }
 #page-footer #elsewhere ul li {
-  padding-left: 3.75rem;
+  padding-left: 3.15rem;
 }
 #page-footer #elsewhere ul li.i-500px {
-  background-image: url("../images/icon-500px-s.png");
+  background-image: url("../images/icons/icon-500px-s-@2x.png");
   background-position: 0 50%;
   background-repeat: no-repeat;
+  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-github {
-  background-image: url("../images/icon-github-s.png");
+  background-image: url("../images/icons/icon-github-s-@2x.png");
   background-position: 0 50%;
   background-repeat: no-repeat;
+  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-linkedin {
-  background-image: url("../images/icon-linkedin-s.png");
+  background-image: url("../images/icons/icon-linkedin-s-@2x.png");
   background-position: 0 50%;
   background-repeat: no-repeat;
+  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-twitter {
-  background-image: url("../images/icon-twitter-s.png");
+  background-image: url("../images/icons/icon-twitter-s-@2x.png");
   background-position: 0 50%;
   background-repeat: no-repeat;
+  background-size: 1.6rem 1.6rem;
+}
+#page-footer #recommendedread ul {
+  list-style: none;
+}
+#page-footer #recommendedread ul li p {
+  margin-bottom: 2.1rem;
+}
+#page-footer #recommendedread ul li p:last-child {
+  margin-bottom: 0;
+}
+#page-footer #rights p {
+  font-size: 1.4rem;
 }
 #page-header h1 {
   color: #000;
-  font-size: 3.2rem;
-  line-height: 3.2rem;
-  margin-left: 0;
+  font-size: 3.6rem;
+  line-height: 4.2rem;
+  margin-bottom: 0;
+  margin-top: 0;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0 #ddd;
   text-transform: uppercase;
+}
+#page-header h1 a {
+  border-bottom-width: 0;
+  color: #000;
 }

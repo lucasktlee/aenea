@@ -4,10 +4,11 @@ html
     font-size: fs-base    // sets font size to 10px
     
 body
-	background-color: c-bg
-	color: c-tx
-	font-family: ff-tx
-	font-size: fs-s-tx
+	background-color: c-w
+	color: c-g2
+	font-family: ff-mercury-ssm, Garvis, Arnhem, Georgia, serif
+	font-size: fs-s3
+	font-weight: fw-normal
 	hyphenate(auto)
 	line-height: lh-s
 	text-rendering: optimizeLegibility
@@ -70,6 +71,20 @@ var
 
 /*  BLOCKQUOTES AND QUOTES
     ----------------------------------------    */
+blockquote
+	border-left: c-v2 solid (bd-w-t-s * 2)
+	padding-bottom: lh-s
+	padding-top: lh-s
+	footer
+		text-align: right 
+		cite:before 
+	        content: "\2014"
+	        padding-right: (hs-s * 1/3)
+	:last-child
+		margin-bottom: 0
+	
+	
+/*	inline quotes */
 q:after,
 q:before 
     content: none
@@ -85,6 +100,10 @@ html[lang="en-US"]
         > q:after
             content: "\2019"	
 
+/*	pull quotes */
+aside.pull 
+	color: c-b
+
 
 /*  HEADINGS
     ----------------------------------------    */
@@ -94,36 +113,52 @@ h3,
 h4,
 h5,
 h6
-	font-family: ff-hd
+	font-family: ff-gotham, "Proxima Nova", Gibson, sans-serif
 	font-style: normal
-	font-weight: 700
-h1 
-	color: c-h1
-	font-size: fs-s-h1
-	line-height: lh-s * 1.5
-h2 
-	font-size: fs-s-h2
-	line-height: lh-s * 1.5
+	font-weight: fw-bold
+h1,
+h2,
 h3 
-	font-size: fs-s-h3
-	line-height: lh-s * 1.25
+	color: c-b
+h4,
+h5,
+h6
+	color: c-g1
+h1 
+	font-size: fs-s8
+	line-height: lh-s * 2
+	margin-bottom: lh-s
+h2 
+	font-size: fs-s7
+	line-height: lh-s * 1.3
+	margin-bottom: lh-s
+	padding-bottom: (lh-s/3)
+	padding-top: (lh-s/3)
+h3 
+	font-size: fs-s6
+	line-height: lh-s
+	margin-bottom: lh-s
+	padding-top: (lh-s/3)
+	padding-bottom: (lh-s * 2/3)  
 h4
-	font-size: fs-s-h4
-	line-height: lh-s * 1.25
+	font-size: fs-s5
+	line-height: lh-s  
+	margin-bottom: lh-s
 h5 
-	font-size: fs-s-h5
+	font-size: fs-s4
 	line-height: lh-s
+	margin-bottom: lh-s
 h6 
-	font-size: fs-s-h6
+	font-size: fs-s3
 	line-height: lh-s
+	margin-bottom: lh-s
 	
-
 
 /*  HORIZONTAL RULES 
     ----------------------------------------    */
 hr 
 	border: 0
-	border-top: c-bd solid bd-w-n
+	border-top: c-g5 solid bd-w-n
 	margin: lh-s 0
 	&.w-50,
 	&.w-75
@@ -141,24 +176,28 @@ abbr
     letter-spacing: 0.1rem
     text-transform: uppercase
     &[title] 
-        border-bottom: c-bd dotted bd-w-n
+        border-bottom: c-g5 dotted bd-w-n
+
+/* citations */
+cite 
+	font-style: italic
 
 /* deleted & inserted text */
 del 
-	color: c-mt
+	color: c-g3
 	text-decoration: line-through
 ins 
-	color: c-h1
+	color: c-b
 	text-decoration: underline
 
 /* small text */
 small 
-	font-size: fs-s-sm
+	font-size: fs-s2
 
 /* subscripts and superscripts */
 sub,
 sup 
-	font-size: fs-s-tn
+	font-size: fs-s1
 	position: relative
 	vertical-align: baseline
 sub
@@ -174,12 +213,32 @@ a
 	text-decoration: none
 	&:link,
 	&:visited
-		border-bottom-color: c-ln
+		border-bottom-color: c-r3
 		color: c-ln
 	&:active,
 	&:hover 
-		border-bottom-color: c-at 
+		border-bottom-color: c-r1 
 		color: c-at
+
+
+/*  LISTS
+    ----------------------------------------    */
+/* Common styles for lists */
+
+
+
+/*	PARAGRAPHS (<p>)
+    ----------------------------------------    */
+p 
+	font-size: fs-s3
+	line-height: lh-s
+	text-align: left
+
+
+/*  TABLES
+    ----------------------------------------    */
+table 
+	max-width: 100%
 
 
 /*  MISCELLANEOUS TYPOGRAPHIC STYLES
@@ -199,30 +258,38 @@ a
 	.post-content 
 		p
 			&.lede 
-				color: c-h1
-				font-size: fs-s-h5
+				color: c-b
+				font-size: fs-s4
 	.post-header 
 		/* article headings */
 		h2 
-			color: c-h1
+			color: c-b
 			hyphenate(none)
 			margin-bottom: 0
+			margin-top: 0
+			padding-bottom: 0
+			padding-top: (lh-s * 2/3)
 			a 
 				border-bottom-width: 0
 				&:link,
 				&:visited 
-					color: c-h1
+					color: c-b
 				&:active,
 				&:hover
-					color: c-ln
-		time 
-			color: c-lt
-			font-family: ff-ft
-			font-size: fs-s-sm
-			font-weight: 400
-		&:hover 
+					color: c-r3
+		p
+			line-height: lh-s
+			margin-bottom: lh-s
 			time 
-				color: c-mt
+				color: c-g4
+				font-family: ff-gotham-ssm, "Proxima Nova", Gibson, sans-serif
+				font-size: fs-s2
+				font-weight: fw-normal
+		/* change color of <time> element on hover */
+		&:hover 
+			p
+				time 
+					color: c-g3
 
 
 /*	PAGE FOOTER (#page-footer)
@@ -231,76 +298,91 @@ a
 	/* common styles */
 	p,
 	ul
-		color: c-lt
+		color: c-g4
+		font-size: fs-s4
 		hyphenate(none)
 		margin-bottom: 0
+		margin-left: 0
 	/* links */
 	a 
 		border-bottom-width: 0
 		&:link,
 		&:visited
-			color: c-ln
+			color: c-r3
 		&:active,
 		&:hover
-			color: c-bd
+			color: c-w		
 	h1 
-		color: c-bd
-		font-family: ff-hd
-		font-size: fs-s-h6
-		font-weight: 300
+		color: c-w
+		font-size: fs-s3
+		font-weight: fw-light
 		hyphenate(none)
-		letter-spacing: 0.2rem
+		letter-spacing: bd-w-n * 2
 		line-height: lh-s
 		margin-bottom: lh-s
 		text-transform: uppercase
-	p 
+	p,
+	ul 
 		small 
-			background: c-h2
+			background: c-g1
 			border-radius: (lh-s/7)
-			font-family: ff-ft
+			font-family: ff-gotham-ssm, "Proxima Nova", Gibson, sans-serif
 			padding: (lh-s/7) 
 			text-transform: uppercase		
-	#disclaimer, 
-	#elsewhere,
-	#me,
-	#site		
-		padding-bottom: lh-s
-		p
-			font-size: fs-s-h5
-			line-height: lh-s
+	/* styles for elsewhere */
 	#elsewhere 
 		ul
-			font-size: fs-s-h5
-			margin-left: 0
 			list-style: none
 			li 
 				padding-left: hs-s * 1.5
 				&.i-500px
-					background-image: url("../images/icon-500px-s.png")
+					background-image: url("../images/icons/icon-500px-s-@2x.png")
 					background-position: 0 50%
 					background-repeat: no-repeat
+					background-size: fs-s4 fs-s4
 				&.i-github 
-					background-image: url("../images/icon-github-s.png")
+					background-image: url("../images/icons/icon-github-s-@2x.png")
 					background-position: 0 50%
 					background-repeat: no-repeat
+					background-size: fs-s4 fs-s4
 				&.i-linkedin
-					background-image: url("../images/icon-linkedin-s.png")
+					background-image: url("../images/icons/icon-linkedin-s-@2x.png")
 					background-position: 0 50%
 					background-repeat: no-repeat
+					background-size: fs-s4 fs-s4
 				&.i-twitter 
-					background-image: url("../images/icon-twitter-s.png")
+					background-image: url("../images/icons/icon-twitter-s-@2x.png")
 					background-position: 0 50%
 					background-repeat: no-repeat
+					background-size: fs-s4 fs-s4
+	/* styles for recommended reading */
+	#recommendedread
+		ul
+			list-style: none
+			li
+				p
+					margin-bottom: lh-s 
+				p:last-child
+					margin-bottom: 0
+	/* styles for recommended reading */
+	#rights 
+		p 
+			font-size: fs-s3
 
 
 /*	PAGE HEADER (#page-header)
     ----------------------------------------    */
 #page-header 
 	h1 
-		color: c-h1
-		font-size: fs-s-lg
-		line-height: fs-s-lg
-		margin-left: 0
+		color: c-b
+		font-size: fs-s9
+		line-height: lh-s * 2
+		margin-bottom: 0
+		margin-top: 0
 		text-align: center
-		text-shadow: 0.1rem 0.1rem 0 c-bd
+		text-shadow: 0.1rem 0.1rem 0 c-g5
 		text-transform: uppercase	
+		a 
+			border-bottom-width: 0
+			color: c-b 
+			

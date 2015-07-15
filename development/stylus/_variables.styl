@@ -1,67 +1,100 @@
 /*  BORDER WIDTHS 
     ----------------------------------------    */
- bd-w-n = 0.1rem 					// Thin border = 1px
- bd-s-w-t = 0.4rem					// Thick border for small devices = 4px
- bd-m-w-t = 0.6rem					// Thick border for medium devices = 6px
- bd-l-w-t = 0.8rem					// Thick border for large devices = 8px
+bd-w-n = 0.1rem							//	1px
+
+bd-w-t-s = 0.3rem						//	3px
+bd-w-t-m = 0.5rem						//	5px
 
 
 /*	COLORS 
     ----------------------------------------    */
 /* 
 	Basic color palatte for Aenea Theme.
-	
-	Links are 
+	Greys: 
 */
+c-b = rgb(0,0,0)						//	#000000
+c-w = rgb(255,255,255)					// 	#ffffff
 
-c-bd = rgb(221,221,221)				// border color: #dddddd
-c-bg = rgb(255,255,255)				// background color: #ffffff
-c-h1 = rgb(0,0,0)					// heading 1 color: #000000
-c-h2 = rgb(34,34,34)				// heading 2 color: #222222
-c-h3 = c-h2 						// heading 3 color: #222222
-c-h4 = c-h3							// heading 4 color: #222222
-c-h5 = rgb(102,102,102)				// heading 5 color: #666666
-c-h6 = c-h5							// heading 6 color: #666666
-c-tx = rgb(68,68,68)				// body copy color: #444444
-c-lt = rgb(153,153,153)				// extra light body copy color: #999999
-c-mt = rgb(102,102,102)				// light body copy color: #666666
-c-ln = rgb(170,57,57)				// default link color
-c-at = rgb(85,0,0)					// default link hover color
+/*	Greys */
+c-g1 = rgb(34,34,34)					//	#222222
+c-g2 = rgb(68,68,68)					//	#444444
+c-g3 = rgb(102,102,102)					//	#666666
+c-g4 = rgb(153,153,153)					//	#999999
+c-g5 = rgb(221,221,221)					//	#dddddd
+
+/* 	Reds */
+c-r1 = rgb(85,0,0)						//	#550000 - dark red
+c-r2 = rgb(128,21,21)					//	#801515 - light red
+c-r3 = rgb(170,57,57)					//	#aa3939 - salmon 
+c-r4 = rgb(212,106,106)					// 	#d46a6a - light salmon
+c-r5 = rgb(255,170,170)					//	#ffaaaa - pink
+
+/*	Greens */
+c-v1 = rgb(0,68,0)						//	#004400 - dark green 
+c-v2 = rgb(17,102,17)					//	#116611 - green
+c-v3 = rgb(45,136,45)					//	#2d882d - light green
+c-v4 = rgb(85,170,85)					//	#55aa55 - pastel green
+c-v5 = rgb(136,204,136)					//	#88cc88 - pale pastel green
+
 
 /*  FONT FAMILIES
     ----------------------------------------    */
-ff-tx = "Mercury SSm A", "Mercury SSm B", Georgia, serif
-ff-hd = "Gotham A", "Gotham B", Helvetica, sans-serif
-ff-ft = "Gotham SSm A", "Gotham SSm B", Helvetica, sans-serif
-ff-ms = Consolas, "Inconsolata", "Lucida Console", "Andale Mono", Monaco, monospace
+/* 
+	Body copy: 							Mercury ScreenSmart, Georgia, serif 
+	Headings:							Gotham 
+	Metadata & Small Headings: 			Gotham ScreenSmart
+	Monospace:							Consolas, Lucida Console, Andale Mono
+*/
+ff-mercury-ssm = "Mercury SSm A", "Mercury SSm B"
+ff-gotham = "Gotham A", "Gotham B"
+ff-gotham-ssm = "Gotham SSm A", "Gotham SSm B"
+ff-lucida-console = "Lucida Console"
+ff-andale-mono = "Andale Mono"
 
 
 /*	FONT SIZES 
     ----------------------------------------    */
 /*	Base font-size */
-fs-base = 62.5%
+fs-base = 62.5%							//	font-size: 10px 
 
-/* 	Body copy for small devices  */
-fs-s-tx = 1.4rem
-fs-s-sm = 1.2rem
-fs-s-tn = 1.0rem
+/*	Font sizes for small devices  */
+fs-s9 = 3.6rem						// 	font-size: 36px
+fs-s8 = 2.8rem						//	font-size: 28px 
+fs-s7 = 2.4rem						//	font-size: 24px
+fs-s6 = 2.1rem						//	font-size: 21px
+fs-s5 = 1.8rem						//	font-size: 18px
+fs-s4 = 1.6rem						// 	font-size: 16px
+fs-s3 = 1.4rem						//	font-size: 14px
+fs-s2 = 1.2rem						//	font-size: 12px	
+fs-s1 = 1.0rem						//	font-size: 10px
 
-fs-s-lg = 3.2rem
-fs-s-h1 = 2.8rem
-fs-s-h2 = 2.4rem
-fs-s-h3 = 2.1rem
-fs-s-h4 = 1.8rem
-fs-s-h5 = 1.6rem
-fs-s-h6 = 1.4rem
-    
+fs-m9 = 4.2rem						// 	font-size: 42px
+fs-m8 = 3.6rem						// 	font-size: 36px
+fs-m7 = 2.8rem						//	font-size: 28px 
+fs-m6 = 2.4rem						//	font-size: 24px
+fs-m5 = 2.1rem						//	font-size: 21px
+fs-m4 = 1.8rem						//	font-size: 18px
+fs-m3 = 1.6rem						// 	font-size: 16px
+fs-m2 = 1.4rem						//	font-size: 14px
+fs-m1 = 1.2rem						//	font-size: 12px
+
+
+/*	FONT WEIGHTS
+    ----------------------------------------    */
+fw-light = 300
+fw-book = 400
+fw-medium = 500
+fw-bold = 700
+
 
 /*  LINE HEIGHTS AND HORIZONTAL SPACING
     ----------------------------------------    */
 hs-s = 2.1rem
-hs-s = 2.5rem
+hs-m = 2.5rem
 
-lh-s = 2.1rem
+lh-s = 2.1rem 
 lh-m = 2.5rem
+
 
 /*  MEDIA QUERY BREAKPOINTS 
     ----------------------------------------    */
@@ -80,4 +113,3 @@ lh-m = 2.5rem
 	-	iPad:						 768px (protrait)
 									1024px (landscape)
 */
-

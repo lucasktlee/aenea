@@ -54,18 +54,31 @@
 /*	PAGE FOOTER (#page-footer)
     ----------------------------------------    */
 #page-footer 
-	background-color: c-h1
+	background-color: c-b
 	padding: lh-s 0
+	/* common bottom padding for each block */
+	div.container
+		div
+			padding-bottom: lh-s	
 	#me 
 		picture  
 			float: left
-			padding-right: hs-s
+			margin-right: hs-s
 			max-height: 10.5rem
 			max-width: 10.5rem
 			img 
-				border: c-h1 solid bd-w-n
+				border: c-b solid bd-w-n
 				border-radius: 7rem
 				width: 100%
+	#recommendedread 
+		img 
+			float: left
+			border: c-g1 solid bd-w-t-s
+			margin-right: hs-s
+			max-height: 12.6rem
+			max-width: 8.4rem
+	#rights
+		margin-top: lh-s 
 
 
 /*	PAGE HEADER (#page-header)
