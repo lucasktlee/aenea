@@ -182,20 +182,6 @@ td,
 th {
   padding: 0;
 }
-.container {
-  margin: 0 auto;
-  max-width: 56.8rem;
-/* clearfix */
-  zoom: 1;
-}
-.container:before,
-.container:after {
-  content: "";
-  display: table;
-}
-.container:after {
-  clear: both;
-}
 .hidden {
   display: none;
 }
@@ -208,6 +194,19 @@ th {
   display: table;
 }
 .clearfix:after {
+  clear: both;
+}
+.container {
+/* clearfix */
+  width: 100%;
+  zoom: 1;
+}
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
   clear: both;
 }
 .c-01,
@@ -225,7 +224,6 @@ th {
   margin-left: 2.1rem;
   margin-right: 2.1rem;
   vertical-align: top;
-  max-width: 100%;
   zoom: 1;
 }
 .accessibility {
@@ -239,9 +237,21 @@ th {
   margin-bottom: 2.1rem;
   margin-top: 2.1rem;
 }
+#page-content .pagination {
+  padding-top: 2.1rem;
+}
+#page-content .pagination nav {
+  margin-left: 0;
+}
+#page-content .post-footer .post-metadata,
+#page-content .post-footer .post-tags {
+  border-top: #ddd solid 0.1rem;
+  padding-bottom: 2.1rem;
+  padding-top: 2.1rem;
+}
 #page-footer {
   background-color: #000;
-  padding: 2.1rem 0;
+  padding-top: 2.1rem;
 /* common bottom padding for each block */
 }
 #page-footer div.container div {
@@ -266,7 +276,9 @@ th {
   max-width: 8.4rem;
 }
 #page-footer #rights {
+  border-top: #444 solid 0.1rem;
   margin-top: 2.1rem;
+  padding-top: 2.1rem;
 }
 #page-header {
   margin-top: 2.1rem;
@@ -395,6 +407,24 @@ code {
   font-family: Consolas, "Lucida Console", "Andale Mono", monospace;
   font-size: 1.2rem;
 }
+figure a > img,
+picture a > img {
+  border-width: 0;
+}
+.footnotes dl.in-line {
+  margin-bottom: 0;
+}
+.footnotes dl.in-line dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.footnotes hr.w-50 {
+  margin: 4.2rem 0 2.1rem;
+}
+.footnotes ol {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
 h1,
 h2,
 h3,
@@ -445,6 +475,7 @@ h5 {
   margin-bottom: 2.1rem;
 }
 h6 {
+  font-family: "Gotham SSm A", "Gotham SSm B", "Proxima Nova", Gibson, sans-serif;
   font-size: 1.4rem;
   line-height: 2.1rem;
   margin-bottom: 2.1rem;
@@ -504,12 +535,84 @@ a {
 a:link,
 a:visited {
   border-bottom-color: #aa3939;
-  color: c-ln;
+  color: #aa3939;
 }
 a:active,
 a:hover {
   border-bottom-color: #500;
-  color: c-at;
+  color: #500;
+}
+ol,
+ul {
+/* first level list */
+  margin-left: 2.1rem;
+}
+ol > li > ol,
+ul > li > ol,
+ol > li > ul,
+ul > li > ul {
+/* second level list */
+  margin-left: 2.1rem;
+}
+ol > li > ol > li > ol,
+ul > li > ol > li > ol,
+ol > li > ul > li > ol,
+ul > li > ul > li > ol,
+ol > li > ol > li > ul,
+ul > li > ol > li > ul,
+ol > li > ul > li > ul,
+ul > li > ul > li > ul {
+/* third level list */
+  margin-left: 2.1rem;
+}
+dl dd {
+  margin-left: 2.1rem;
+}
+dl dt {
+  font-weight: 700;
+}
+dl.in-line {
+  margin-bottom: 2.1rem;
+}
+dl.in-line dd,
+dl.in-line dt {
+  display: inline;
+  margin: 0;
+}
+dl.in-line dt:after {
+  content: ": ";
+}
+dl.in-line dd + dd:before {
+  content: ", ";
+  margin-left: -0.4rem;
+}
+dl.in-line dd + dt:before {
+  content: "\A\A";
+  white-space: pre;
+}
+ol {
+/* first level ordered list */
+  list-style: decimal;
+}
+ol > li > ol {
+/* second level ordered list */
+  list-style: lower-alpha;
+}
+ol > li > ol > li > ol {
+/* third level ordered list */
+  list-style: lower-roman;
+}
+ul {
+/* first level unordered list */
+  list-style: disc;
+}
+ul > li > ul {
+/* second level unordered list */
+  list-style: square;
+}
+ul > li > ul > li > ul {
+/* third level unordered list */
+  list-style: circle;
 }
 p {
   font-size: 1.4rem;
@@ -517,7 +620,64 @@ p {
   text-align: left;
 }
 table {
+  border-left: #ddd solid 0.1rem;
+  border-top: #ddd solid 0.1rem;
   max-width: 100%;
+}
+table caption {
+  caption-side: bottom;
+  margin-top: 2.1rem;
+  text-align: left;
+}
+table td,
+table th {
+  border-right: #ddd solid 0.1rem;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  padding: 1.05rem 0.7rem;
+}
+table tr {
+  border-bottom: #ddd solid 0.1rem;
+}
+table.striped {
+/* default - no border */
+  border-left-width: 0;
+  border-top-width: 0;
+/* striped with border */
+}
+table.striped tr:nth-child(odd) > td,
+table.striped tr:nth-child(odd) > th {
+  background: #dfd;
+}
+table.striped tr {
+  border-bottom-width: 0;
+}
+table.striped td,
+table.striped th {
+  border-right-width: 0;
+}
+table.striped.h-border tr:last-child {
+  border-bottom: #8c8 solid 0.1rem;
+}
+table.striped.h-border tr:nth-child(odd) > td,
+table.striped.h-border tr:nth-child(odd) > th {
+  border-bottom: #8c8 solid 0.1rem;
+  border-top: #8c8 solid 0.1rem;
+}
+table.striped.v-border {
+  border-left: #8c8 solid 0.1rem;
+}
+table.striped.v-border td,
+table.striped.v-border th {
+  border-right: #8c8 solid 0.1rem;
+}
+.responsive-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
 }
 .center {
   text-align: center;
@@ -528,9 +688,59 @@ table {
 .right {
   text-align: right;
 }
+#page-content .pagination nav.page-navigation ul {
+  list-style: none;
+  margin-left: 0;
+  text-align: center;
+}
+#page-content .pagination nav.page-navigation ul li {
+  border: #ddd solid 0.1rem;
+  border-radius: 0.3rem;
+  display: inline-block;
+}
+#page-content .pagination nav.page-navigation ul li + li {
+  margin-left: 2.1rem;
+}
+#page-content .pagination nav.page-navigation ul li a {
+  border-bottom-width: 0;
+  display: block;
+  line-height: 2.1rem;
+  padding: 1.05rem 2.1rem;
+}
 #page-content .post-content p.lede {
   color: #000;
   font-size: 1.6rem;
+}
+#page-content .post-footer .post-metadata p {
+  margin-bottom: 0;
+}
+#page-content .post-footer .post-metadata p time {
+  color: #999;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Proxima Nova", Gibson, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+#page-content .post-footer .post-tags p {
+  float: left;
+  padding-right: 2.1rem;
+}
+#page-content .post-footer .post-tags ul {
+  list-style: none;
+  margin-left: 0;
+}
+#page-content .post-footer .post-tags ul li {
+  display: inline-block;
+  line-height: 2.1rem;
+}
+#page-content .post-footer .post-tags ul li a {
+  border-bottom-width: 0;
 }
 #page-content .post-header h2 {
   color: #000;
@@ -563,7 +773,14 @@ table {
   color: #999;
   font-family: "Gotham SSm A", "Gotham SSm B", "Proxima Nova", Gibson, sans-serif;
   font-size: 1.2rem;
-  font-weight: fw-normal;
+  font-weight: 300;
+  hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 #page-content .post-header:hover p time {
   color: #666;
@@ -593,6 +810,7 @@ table {
 }
 #page-footer h1 {
   color: #fff;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Proxima Nova", Gibson, sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
   hyphens: none;
@@ -618,30 +836,21 @@ table {
 }
 #page-footer #elsewhere ul li {
   padding-left: 3.15rem;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-500px {
   background-image: url("../images/icons/icon-500px-s-@2x.png");
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-github {
   background-image: url("../images/icons/icon-github-s-@2x.png");
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-linkedin {
   background-image: url("../images/icons/icon-linkedin-s-@2x.png");
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 1.6rem 1.6rem;
 }
 #page-footer #elsewhere ul li.i-twitter {
   background-image: url("../images/icons/icon-twitter-s-@2x.png");
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 1.6rem 1.6rem;
 }
 #page-footer #recommendedread ul {
   list-style: none;

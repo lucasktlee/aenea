@@ -15,3 +15,17 @@ clearfix()
 		display: table
 	&:after 
 		clear: both
+
+/* time - common styles */
+condensed-gotham-style(c, fs, ls = bd-w-n, lh = 0, mb = 0)
+	color: c
+	font-family: ff-gotham-ssm, "Proxima Nova", Gibson, sans-serif
+	font-size: fs 
+	font-weight: fw-light
+	hyphenate(none)
+	letter-spacing: (ls * 2)
+	if lh != 0
+		line-height: lh
+	if mb != 0
+		margin-bottom: mb
+	text-transform: uppercase

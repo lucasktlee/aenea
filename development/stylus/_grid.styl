@@ -1,10 +1,5 @@
 /*  BASIC GRID STYLES 
     ----------------------------------------    */
-.container
-	margin: 0 auto
-	max-width: 56.8rem
-	/* clearfix */
-	clearfix()
 .hidden 
 	display: none
 
@@ -14,7 +9,14 @@
 
 /*	COLUMNS 
     ----------------------------------------    */
-/* .columns */
+/* container - serves as a row for a set of columns */
+.container
+	/* clearfix */
+	width: 100%
+	clearfix()
+
+/* columns */
+/* reset all columns to take up the full width of the container */
 .c-01,
 .c-02,
 .c-03,
@@ -30,8 +32,10 @@
 	margin-left: lh-s
 	margin-right: lh-s
 	vertical-align: top 
-	max-width: 100%
 	zoom: 1
+
+/* if the viewport size is large enough, allow for simplified multi-column layout */
+
 
 
 /*  ACCESSIBILITY STYLES
@@ -49,13 +53,23 @@
 #page-content 
 	margin-bottom: lh-s
 	margin-top: lh-s
+	.pagination 
+		padding-top: lh-s
+		nav 
+			margin-left: 0
+	.post-footer 
+		.post-metadata,
+		.post-tags	
+			border-top: c-g5 solid bd-w-n
+			padding-bottom: lh-s
+			padding-top: lh-s
 	
 
 /*	PAGE FOOTER (#page-footer)
     ----------------------------------------    */
 #page-footer 
 	background-color: c-b
-	padding: lh-s 0
+	padding-top: lh-s
 	/* common bottom padding for each block */
 	div.container
 		div
@@ -78,7 +92,9 @@
 			max-height: 12.6rem
 			max-width: 8.4rem
 	#rights
+		border-top: c-g2 solid bd-w-n
 		margin-top: lh-s 
+		padding-top: lh-s
 
 
 /*	PAGE HEADER (#page-header)

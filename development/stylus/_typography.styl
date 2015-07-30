@@ -16,7 +16,7 @@ body
 
 /*  COMMON STYLES
     ----------------------------------------    */
-/* Zero out margins and padding */
+/* zero out margins and padding */
 article,
 aside,
 blockquote,
@@ -41,7 +41,7 @@ ul
     margin: 0
     padding: 0 
 
-/* Set common bottom margin for block level elements */
+/* set common bottom margin for block level elements */
 blockquote,
 dl,
 ol,
@@ -52,12 +52,12 @@ ul,
 .footnotes
 	margin-bottom: lh-s
 	
-/* Set common padding and borders for blockquotes and preformatted text */
+/* set common padding and borders for blockquotes and preformatted text */
 blockquote,
 pre 
 	padding: 0 hs-s
 	
-/* Remove hyphenation for certain HTML elements */
+/* remove hyphenation for certain HTML elements */
 abbr,
 blockquote,
 code,
@@ -123,8 +123,36 @@ figcaption,
 code 
 	font-family: Consolas, ff-lucida-console, ff-andale-mono, monospace
 	font-size: fs-s2
+
+/* pre */
+	
 	
 
+/*  FIGURES, IMAGES, AND PICTURES  
+    ----------------------------------------    */
+figure,
+picture 
+    a 
+        & > img 
+            border-width: 0
+
+
+/*  FOOTNOTES 
+    ----------------------------------------    */
+.footnotes 
+	dl.in-line
+		margin-bottom: 0
+		dd + dt 
+	        &:before 
+	            content: "\A"
+	            white-space: pre		
+	hr.w-50 
+		margin: (lh-s * 2) 0 lh-s  /* top | left & right | bottom */	
+	ol 
+		font-size: fs-s2
+		margin-bottom: 0
+	
+	
 
 /*  HEADINGS
     ----------------------------------------    */
@@ -170,6 +198,7 @@ h5
 	line-height: lh-s
 	margin-bottom: lh-s
 h6 
+	font-family: ff-gotham-ssm, "Proxima Nova", Gibson, sans-serif
 	font-size: fs-s3
 	line-height: lh-s
 	margin-bottom: lh-s
@@ -235,17 +264,75 @@ a
 	&:link,
 	&:visited
 		border-bottom-color: c-r3
-		color: c-ln
+		color: c-r3
 	&:active,
 	&:hover 
 		border-bottom-color: c-r1 
-		color: c-at
+		color: c-r1
 
 
 /*  LISTS
     ----------------------------------------    */
-/* Common styles for lists */
+/* common styles for lists */
+ol, 
+ul 
+	/* first level list */
+	margin-left: hs-s
+	& > li > ol,
+	& > li > ul
+		/* second level list */
+		margin-left: hs-s 
+		& > li > ol,
+		& > li > ul
+			/* third level list */
+			margin-left: hs-s 
 
+
+/* definition lists */
+dl 
+	dd 
+		margin-left: hs-s
+	dt 
+		font-weight: fw-bold
+	/* inline definition lists */
+	&.in-line 
+		margin-bottom: lh-s
+		dd, 
+		dt 
+			display: inline
+			margin: 0
+		dt:after 
+			content: ": "
+		dd + dd 
+	        &:before 
+	            content: ", " 
+	            margin-left: -0.4rem
+	    dd + dt 
+	        &:before 
+	            content: "\A\A"
+	            white-space: pre
+
+/* ordered lists */
+ol
+	/* first level ordered list */
+	list-style: decimal
+	& > li > ol 
+		/* second level ordered list */
+		list-style: lower-alpha
+		& > li > ol 
+			/* third level ordered list */
+			list-style: lower-roman
+
+/* unordered lists */
+ul 
+	/* first level unordered list */
+	list-style: disc
+	& > li > ul 
+		/* second level unordered list */
+		list-style: square 
+		& > li > ul 
+			/* third level unordered list */
+			list-style: circle
 
 
 /*	PARAGRAPHS (<p>)
@@ -259,7 +346,53 @@ p
 /*  TABLES
     ----------------------------------------    */
 table 
+	border-left: c-g5 solid bd-w-n
+	border-top: c-g5 solid bd-w-n
 	max-width: 100%
+	caption
+		caption-side: bottom
+		margin-top: lh-s
+		text-align: left
+	td,
+	th
+		border-right: c-g5 solid bd-w-n
+		hyphenate(none)
+		padding: (lh-s/2) (hs-s/3)
+	tr 
+		border-bottom: c-g5 solid bd-w-n
+	&.striped 
+		/* default - no border */
+		border-left-width: 0 
+		border-top-width: 0
+		tr:nth-child(odd)
+			& > td,
+			& > th
+				background: c-v6
+		tr 
+			border-bottom-width: 0
+		td,
+		th
+			border-right-width: 0
+		/* striped with border */
+		&.h-border 
+			tr:last-child
+				border-bottom: c-v5 solid bd-w-n
+			tr:nth-child(odd)
+				& > td,
+				& > th
+					border-bottom: c-v5 solid bd-w-n
+					border-top: c-v5 solid bd-w-n
+		&.v-border
+			border-left: c-v5 solid bd-w-n
+			td,
+			th 
+				border-right: c-v5 solid bd-w-n
+	
+/* responsive wrapper to avoid large tables breaking layout */
+.responsive-wrapper 
+	overflow-x: auto;
+	overflow-y: hidden
+	width: 100%
 
 
 /*  MISCELLANEOUS TYPOGRAPHIC STYLES
@@ -276,11 +409,46 @@ table
 /*	PAGE CONTENT (#page-content)
     ----------------------------------------    */
 #page-content 	
+	.pagination 
+		nav.page-navigation 
+			ul 
+				list-style: none
+				margin-left: 0
+				text-align: center
+				li 
+					border: c-g5 solid bd-w-n
+					border-radius: (lh-s/7)
+					display: inline-block
+					& + li
+						margin-left: lh-s						 
+					a 
+						border-bottom-width: 0
+						display: block
+						line-height: lh-s
+						padding: (lh-s/2) (lh-s)
 	.post-content 
 		p
 			&.lede 
 				color: c-b
 				font-size: fs-s4
+	.post-footer 
+		.post-metadata 
+			p 
+				margin-bottom: 0
+				time
+					condensed-gotham-style(c-g4, fs-s2)
+		.post-tags
+			p 
+				float: left
+				padding-right: hs-s
+			ul 
+				list-style: none
+				margin-left: 0
+				li 
+					display: inline-block
+					line-height: lh-s 
+					a 
+						border-bottom-width: 0
 	.post-header 
 		/* article headings */
 		h2 
@@ -302,10 +470,7 @@ table
 			line-height: lh-s
 			margin-bottom: lh-s
 			time 
-				color: c-g4
-				font-family: ff-gotham-ssm, "Proxima Nova", Gibson, sans-serif
-				font-size: fs-s2
-				font-weight: fw-normal
+				condensed-gotham-style(c-g4, fs-s2)
 		/* change color of <time> element on hover */
 		&:hover 
 			p
@@ -334,14 +499,7 @@ table
 		&:hover
 			color: c-w		
 	h1 
-		color: c-w
-		font-size: fs-s3
-		font-weight: fw-light
-		hyphenate(none)
-		letter-spacing: bd-w-n * 2
-		line-height: lh-s
-		margin-bottom: lh-s
-		text-transform: uppercase
+		condensed-gotham-style(c-w, fs-s3, bd-w-n, lh-s, lh-s)
 	p,
 	ul 
 		small 
@@ -356,26 +514,17 @@ table
 			list-style: none
 			li 
 				padding-left: hs-s * 1.5
+				background-position: 0 50%
+				background-repeat: no-repeat
+				background-size: fs-s4 fs-s4
 				&.i-500px
 					background-image: url("../images/icons/icon-500px-s-@2x.png")
-					background-position: 0 50%
-					background-repeat: no-repeat
-					background-size: fs-s4 fs-s4
 				&.i-github 
 					background-image: url("../images/icons/icon-github-s-@2x.png")
-					background-position: 0 50%
-					background-repeat: no-repeat
-					background-size: fs-s4 fs-s4
 				&.i-linkedin
 					background-image: url("../images/icons/icon-linkedin-s-@2x.png")
-					background-position: 0 50%
-					background-repeat: no-repeat
-					background-size: fs-s4 fs-s4
 				&.i-twitter 
 					background-image: url("../images/icons/icon-twitter-s-@2x.png")
-					background-position: 0 50%
-					background-repeat: no-repeat
-					background-size: fs-s4 fs-s4
 	/* styles for recommended reading */
 	#recommendedread
 		ul
