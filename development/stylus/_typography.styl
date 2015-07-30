@@ -125,7 +125,10 @@ code
 	font-size: fs-s2
 
 /* pre */
-	
+pre[class*="language-"]
+	line-height: lh-s
+	margin: 0 0 lh-s	
+	padding: lh-s hs-s
 	
 
 /*  FIGURES, IMAGES, AND PICTURES  
@@ -175,11 +178,11 @@ h6
 	color: c-g1
 h1 
 	font-size: fs-s8
-	line-height: lh-s * 2
+	line-height: (lh-s * 2)
 	margin-bottom: lh-s
 h2 
 	font-size: fs-s7
-	line-height: lh-s * 1.3
+	line-height: (lh-s * 1.3)
 	margin-bottom: lh-s
 	padding-bottom: (lh-s/3)
 	padding-top: (lh-s/3)
@@ -223,7 +226,7 @@ hr
     ----------------------------------------    */
 /* abbreviations */
 abbr 
-    letter-spacing: 0.1rem
+    letter-spacing: bd-w-n
     text-transform: uppercase
     &[title] 
         border-bottom: c-g5 dotted bd-w-n
@@ -360,6 +363,8 @@ table
 		padding: (lh-s/2) (hs-s/3)
 	tr 
 		border-bottom: c-g5 solid bd-w-n
+	&.condensed 
+		
 	&.striped 
 		/* default - no border */
 		border-left-width: 0 
@@ -409,8 +414,14 @@ table
 /*	PAGE CONTENT (#page-content)
     ----------------------------------------    */
 #page-content 	
+	/* archive header */
+	.archive-header
+		h1 
+			f-gotham-ssm-allcaps(c-g4, fs-s2, lh-s, 0)
+			letter-spacing: (bd-w-n * 2)
+	/* page navigation (for archives) */
 	.pagination 
-		nav.page-navigation 
+		nav 
 			ul 
 				list-style: none
 				margin-left: 0
@@ -425,7 +436,7 @@ table
 						border-bottom-width: 0
 						display: block
 						line-height: lh-s
-						padding: (lh-s/2) (lh-s)
+						padding: (lh-s/2) lh-s
 	.post-content 
 		p
 			&.lede 
@@ -436,7 +447,8 @@ table
 			p 
 				margin-bottom: 0
 				time
-					condensed-gotham-style(c-g4, fs-s2)
+					f-gotham-ssm-allcaps(c-g4, fs-s2)
+					letter-spacing: (bd-w-n * 2)
 		.post-tags
 			p 
 				float: left
@@ -470,7 +482,8 @@ table
 			line-height: lh-s
 			margin-bottom: lh-s
 			time 
-				condensed-gotham-style(c-g4, fs-s2)
+				f-gotham-ssm-allcaps(c-g4, fs-s2)
+				letter-spacing: (bd-w-n * 2)
 		/* change color of <time> element on hover */
 		&:hover 
 			p
@@ -499,7 +512,8 @@ table
 		&:hover
 			color: c-w		
 	h1 
-		condensed-gotham-style(c-w, fs-s3, bd-w-n, lh-s, lh-s)
+		f-gotham-ssm-allcaps(c-w, fs-s3, lh-s, lh-s)
+		letter-spacing: (bd-w-n * 2)
 	p,
 	ul 
 		small 
@@ -513,7 +527,7 @@ table
 		ul
 			list-style: none
 			li 
-				padding-left: hs-s * 1.5
+				padding-left: (hs-s * 1.5)
 				background-position: 0 50%
 				background-repeat: no-repeat
 				background-size: fs-s4 fs-s4
@@ -546,7 +560,7 @@ table
 	h1 
 		color: c-b
 		font-size: fs-s9
-		line-height: lh-s * 2
+		line-height: (lh-s * 2)
 		margin-bottom: 0
 		margin-top: 0
 		text-align: center

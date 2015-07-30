@@ -1,11 +1,3 @@
-/* set hyphenation for elements */
-hyphenate(v)
-	hyphens: v
-	-moz-hyphens: v
-	-ms-hyphens: v
-	-o-hyphens: v
-	-webkit-hyphens: v
-
 /* clearfix to clear floating elements */	
 clearfix()
 	zoom: 1
@@ -16,16 +8,23 @@ clearfix()
 	&:after 
 		clear: both
 
-/* time - common styles */
-condensed-gotham-style(c, fs, ls = bd-w-n, lh = 0, mb = 0)
+/* all caps gotham ssm -- style used in time, and headings for site #footer */
+f-gotham-ssm-allcaps(c, fs, lh = false, mb = false)
 	color: c
 	font-family: ff-gotham-ssm, "Proxima Nova", Gibson, sans-serif
 	font-size: fs 
 	font-weight: fw-light
 	hyphenate(none)
-	letter-spacing: (ls * 2)
-	if lh != 0
+	if lh != false
 		line-height: lh
-	if mb != 0
+	if mb != false
 		margin-bottom: mb
 	text-transform: uppercase
+
+/* set hyphenation for elements */
+hyphenate(v)
+	hyphens: v
+	-moz-hyphens: v
+	-ms-hyphens: v
+	-o-hyphens: v
+	-webkit-hyphens: v
