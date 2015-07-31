@@ -360,11 +360,17 @@ table
 	th
 		border-right: c-g5 solid bd-w-n
 		hyphenate(none)
+		line-height: lh-s
 		padding: (lh-s/2) (hs-s/3)
 	tr 
 		border-bottom: c-g5 solid bd-w-n
 	&.condensed 
-		
+		border-left-width: 0
+		border-top: c-g5 solid bd-w-n
+		td,
+		th 
+			border-right-width: 0
+			padding: (lh-s/3) (hs-s/3) (lh-s/3)
 	&.striped 
 		/* default - no border */
 		border-left-width: 0 

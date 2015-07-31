@@ -741,52 +741,50 @@ table th {
   -ms-hyphens: none;
   -o-hyphens: none;
   -webkit-hyphens: none;
+  line-height: 2.1rem;
   padding: 1.05rem 0.7rem;
 }
 table tr {
   border-bottom: #ddd solid 0.1rem;
 }
-table.condensed,
+table.condensed {
+  border-left-width: 0;
+  border-top: #ddd solid 0.1rem;
+}
+table.condensed td,
+table.condensed th {
+  border-right-width: 0;
+  padding: 0.7rem 0.7rem 0.7rem;
+}
 table.striped {
 /* default - no border */
   border-left-width: 0;
   border-top-width: 0;
 /* striped with border */
 }
-table.condensed tr:nth-child(odd) > td,
 table.striped tr:nth-child(odd) > td,
-table.condensed tr:nth-child(odd) > th,
 table.striped tr:nth-child(odd) > th {
   background: #dfd;
 }
-table.condensed tr,
 table.striped tr {
   border-bottom-width: 0;
 }
-table.condensed td,
 table.striped td,
-table.condensed th,
 table.striped th {
   border-right-width: 0;
 }
-table.condensed.h-border tr:last-child,
 table.striped.h-border tr:last-child {
   border-bottom: #8c8 solid 0.1rem;
 }
-table.condensed.h-border tr:nth-child(odd) > td,
 table.striped.h-border tr:nth-child(odd) > td,
-table.condensed.h-border tr:nth-child(odd) > th,
 table.striped.h-border tr:nth-child(odd) > th {
   border-bottom: #8c8 solid 0.1rem;
   border-top: #8c8 solid 0.1rem;
 }
-table.condensed.v-border,
 table.striped.v-border {
   border-left: #8c8 solid 0.1rem;
 }
-table.condensed.v-border td,
 table.striped.v-border td,
-table.condensed.v-border th,
 table.striped.v-border th {
   border-right: #8c8 solid 0.1rem;
 }
