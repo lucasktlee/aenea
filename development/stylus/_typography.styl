@@ -430,6 +430,7 @@ table
 		nav 
 			ul 
 				list-style: none
+				margin-bottom: 0
 				margin-left: 0
 				text-align: center
 				li 
@@ -457,6 +458,7 @@ table
 					letter-spacing: (bd-w-n * 2)
 		.post-sharing 
 			p 
+				margin-bottom: 0
 				a
 					border-bottom-width: 0
 					&:link,
@@ -473,9 +475,15 @@ table
 			ul 
 				list-style: none
 				margin-left: 0
+				margin-bottom: 0
 				li 
 					display: inline-block
 					line-height: lh-s 
+					&:after 
+						content: ", "
+					&:last-child 
+						&:after 
+							content: "."
 					a 
 						border-bottom-width: 0
 	.post-header 

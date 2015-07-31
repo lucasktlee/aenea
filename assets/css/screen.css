@@ -820,6 +820,7 @@ table.striped.v-border th {
 }
 #page-content .pagination nav ul {
   list-style: none;
+  margin-bottom: 0;
   margin-left: 0;
   text-align: center;
 }
@@ -857,6 +858,9 @@ table.striped.v-border th {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
 }
+#page-content .post-footer .post-sharing p {
+  margin-bottom: 0;
+}
 #page-content .post-footer .post-sharing p a {
   border-bottom-width: 0;
 }
@@ -875,10 +879,17 @@ table.striped.v-border th {
 #page-content .post-footer .post-tags ul {
   list-style: none;
   margin-left: 0;
+  margin-bottom: 0;
 }
 #page-content .post-footer .post-tags ul li {
   display: inline-block;
   line-height: 2.1rem;
+}
+#page-content .post-footer .post-tags ul li:after {
+  content: ", ";
+}
+#page-content .post-footer .post-tags ul li:last-child:after {
+  content: ".";
 }
 #page-content .post-footer .post-tags ul li a {
   border-bottom-width: 0;
