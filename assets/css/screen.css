@@ -856,6 +856,17 @@ table.striped.v-border th {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
 }
+#page-content .post-footer .post-sharing p a {
+  border-bottom-width: 0;
+}
+#page-content .post-footer .post-sharing p a:link,
+#page-content .post-footer .post-sharing p a:visited {
+  color: #999;
+}
+#page-content .post-footer .post-sharing p a:active,
+#page-content .post-footer .post-sharing p a:hover {
+  color: #666;
+}
 #page-content .post-footer .post-tags p {
   float: left;
   padding-right: 2.1rem;
