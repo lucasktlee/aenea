@@ -343,6 +343,7 @@ pre[class*="language-"] {
   margin-left: 0;
 }
 #page-content .post-footer .post-metadata,
+#page-content .post-footer .post-sharing,
 #page-content .post-footer .post-tags {
   border-top: #ddd solid 0.1rem;
   padding-bottom: 2.1rem;
