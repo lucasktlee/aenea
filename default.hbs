@@ -8,7 +8,7 @@
 		<meta content="{{meta_title}}" name="title" />
 		<meta content="Lucas K.T. Lee" name="author" />
 		<meta content="{{meta_description}}" name="description" />
-		<meta content="asset management, books, business school, disruptive technology, entrepreneurship, history, innovation, MBA, portfolio management, private equity, startups, technology, venture capital, Wharton" name="keywords" />
+		<meta content="asset management, bitcoin, books, business school, disruptive technology, entrepreneurship, fintech, history, innovation, MBA, portfolio management, private equity, startups, technology, venture capital, Wharton" name="keywords" />
 		
 		<link href="//cloud.typography.com/7428892/793304/css/fonts.css" rel="stylesheet" type="text/css" />
 		<link href="{{asset "css/screen.css"}}" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -20,6 +20,9 @@
 		</script>
 		<script async src="{{asset "js/picturefill.min.js"}}" type="text/javascript"></script>
 		
+		{{! Prism }}
+		<script src="{{asset "js/prism.min.js"}}" type="text/javascript"></script>
+
 		{{! Google Analytics }}
 		<script async src="//www.google-analytics.com/analytics.js" type="text/javascript"></script>
 		
@@ -44,7 +47,11 @@
 
 		<footer id="page-footer" role="contentinfo">
 			<div class="container">
-				
+				<div class="c-12" id="me">
+					<h1>About Me</h1>
+					<picture><img src="../assets/images/lucasktlee.jpg"/></picture>
+					<p class="clearfix">I am a <abbr>MBA</abbr> student at Wharton, private equity lawyer, technology enthusiast, and amateur photographer. <small><a href="http://lucasktlee.com/about/">More</a></small></p>
+				</div>
 			</div>
 		</footer>
 		{{! Ghost outputs important scripts and data with this tag }}

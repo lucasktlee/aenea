@@ -327,6 +327,14 @@ pre[class*="language-"] {
   position: absolute;
   width: 1px;
 }
+figure,
+picture {
+  padding: 0;
+}
+figure img,
+picture img {
+  width: 100%;
+}
 #page-content {
   margin-bottom: 2.1rem;
   margin-top: 2.1rem;
@@ -426,6 +434,7 @@ ul {
   padding: 0;
 }
 blockquote,
+div.example,
 dl,
 ol,
 p,
@@ -453,8 +462,26 @@ var {
   -o-hyphens: none;
   -webkit-hyphens: none;
 }
+aside.pull-quote {
+  border-top: #161 solid 0.6rem;
+  color: #000;
+  font-size: 2.1rem;
+  line-height: 3.5rem;
+  padding: 2.1rem 0;
+/* for small devices there is no room for left and right pull quotes */
+}
+aside.pull-quote.left,
+aside.pull-quote.right {
+  border-left: 0;
+  border-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  float: none;
+  text-align: left;
+}
 blockquote {
   border-left: #161 solid 0.6rem;
+  margin-left: -0.6rem;
   padding-bottom: 2.1rem;
   padding-top: 2.1rem;
 }
@@ -487,9 +514,6 @@ html[lang="en-US"] q > q:before {
 html[lang="en"] q > q:after,
 html[lang="en-US"] q > q:after {
   content: "\2019";
-}
-aside.pull {
-  color: #000;
 }
 caption,
 figcaption,
@@ -838,9 +862,20 @@ table.striped.v-border th {
   line-height: 2.1rem;
   padding: 1.05rem 2.1rem;
 }
+#page-content .post-content div.example {
+  border: #ddd solid 0.1rem;
+  padding-bottom: 2.1rem;
+  padding-left: 2.1rem;
+  padding-right: 2.1rem;
+  padding-top: 2.1rem;
+}
+#page-content .post-content div.example :last-child {
+  margin-bottom: 0;
+}
 #page-content .post-content p.lede {
   color: #000;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
 }
 #page-content .post-footer .post-metadata p {
   margin-bottom: 0;

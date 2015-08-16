@@ -43,6 +43,7 @@ ul
 
 /* set common bottom margin for block level elements */
 blockquote,
+div.example,
 dl,
 ol,
 p,
@@ -69,10 +70,28 @@ var
     hyphenate(none)
 
 
-/*  BLOCKQUOTES AND QUOTES
+/*  ASIDES, BLOCKQUOTES AND QUOTES
     ----------------------------------------    */
+aside
+	&.pull-quote 
+		border-top: c-v2 solid (bd-w-t-s * 2)
+		color: c-b
+		font-size: fs-s6
+		line-height: (lh-s * 5/3)
+		padding: lh-s 0
+		/* for small devices there is no room for left and right pull quotes */
+		&.left,
+		&.right
+			border-left: 0
+			border-right: 0
+			margin-left: 0
+			margin-right: 0
+			float: none
+			text-align: left
+
 blockquote
 	border-left: c-v2 solid (bd-w-t-s * 2)
+	margin-left: (bd-w-t-s * -2)
 	padding-bottom: lh-s
 	padding-top: lh-s
 	footer
@@ -82,7 +101,6 @@ blockquote
 	        padding-right: (hs-s * 1/3)
 	:last-child
 		margin-bottom: 0
-	
 	
 /*	inline quotes */
 q:after,
@@ -99,11 +117,6 @@ html[lang="en-US"]
             content: "\2018"
         > q:after
             content: "\2019"	
-
-/*	pull quotes */
-aside
-	&.pull 
-		color: c-b
 
 
 /*  CAPTIONS 
@@ -445,10 +458,20 @@ table
 						line-height: lh-s
 						padding: (lh-s/2) lh-s
 	.post-content 
+		div 
+			&.example 
+				border: c-g5 solid bd-w-n
+				padding-bottom: lh-s
+				padding-left: hs-s
+				padding-right: hs-s
+				padding-top: lh-s
+				:last-child
+					margin-bottom: 0	
 		p
 			&.lede 
 				color: c-b
-				font-size: fs-s4
+				font-size: fs-s5
+				line-height: (lh-s * 4/3)
 	.post-footer 
 		.post-metadata 
 			p 
