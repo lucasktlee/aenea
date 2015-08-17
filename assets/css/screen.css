@@ -291,8 +291,9 @@ pre[class*="language-"] {
   clear: both;
 }
 .container {
-/* clearfix */
   width: 100%;
+  max-width: 100rem;
+/* clearfix */
   zoom: 1;
 }
 .container:before,
@@ -315,8 +316,8 @@ pre[class*="language-"] {
 .c-10,
 .c-11,
 .c-12 {
-  margin-left: 2.1rem;
-  margin-right: 2.1rem;
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
   vertical-align: top;
   zoom: 1;
 }
@@ -367,7 +368,7 @@ picture img {
 }
 #page-footer #me picture {
   float: left;
-  margin-right: 2.1rem;
+  margin-right: 1.4rem;
   max-height: 10.5rem;
   max-width: 10.5rem;
 }
@@ -379,7 +380,7 @@ picture img {
 #page-footer #recommendedread img {
   float: left;
   border: #222 solid 0.3rem;
-  margin-right: 2.1rem;
+  margin-right: 1.4rem;
   max-height: 12.6rem;
   max-width: 8.4rem;
 }
@@ -387,6 +388,17 @@ picture img {
   border-top: #444 solid 0.1rem;
   margin-top: 2.1rem;
   padding-top: 2.1rem;
+}
+@media all and (min-width: 25.0625em) and (max-width: 35.5em) {
+  #page-footer div.container .c-06 {
+    float: left;
+    margin-left: 1.4rem;
+    margin-right: 0;
+    width: 41.9%;
+  }
+  #page-footer div.container:last-child {
+    margin-right: 1.4rem;
+  }
 }
 #page-header {
   margin-top: 2.1rem;
@@ -446,7 +458,7 @@ ul,
 }
 blockquote,
 pre {
-  padding: 0 2.1rem;
+  padding: 0 1.4rem;
 }
 abbr,
 blockquote,
@@ -490,7 +502,7 @@ blockquote footer {
 }
 blockquote footer cite:before {
   content: "\2014";
-  padding-right: 0.7rem;
+  padding-right: 0.466666666666667rem;
 }
 blockquote :last-child {
   margin-bottom: 0;
@@ -534,7 +546,7 @@ code {
 pre[class*="language-"] {
   line-height: 2.1rem;
   margin: 0 0 2.1rem;
-  padding: 2.1rem 2.1rem;
+  padding: 2.1rem 1.4rem;
 }
 figure a > img,
 picture a > img {
@@ -674,14 +686,14 @@ a:hover {
 ol,
 ul {
 /* first level list */
-  margin-left: 2.1rem;
+  margin-left: 1.4rem;
 }
 ol > li > ol,
 ul > li > ol,
 ol > li > ul,
 ul > li > ul {
 /* second level list */
-  margin-left: 2.1rem;
+  margin-left: 1.4rem;
 }
 ol > li > ol > li > ol,
 ul > li > ol > li > ol,
@@ -692,10 +704,10 @@ ul > li > ol > li > ul,
 ol > li > ul > li > ul,
 ul > li > ul > li > ul {
 /* third level list */
-  margin-left: 2.1rem;
+  margin-left: 1.4rem;
 }
 dl dd {
-  margin-left: 2.1rem;
+  margin-left: 1.4rem;
 }
 dl dt {
   font-weight: 700;
@@ -767,7 +779,7 @@ table th {
   -o-hyphens: none;
   -webkit-hyphens: none;
   line-height: 2.1rem;
-  padding: 1.05rem 0.7rem;
+  padding: 1.05rem 0.466666666666667rem;
 }
 table tr {
   border-bottom: #ddd solid 0.1rem;
@@ -779,7 +791,7 @@ table.condensed {
 table.condensed td,
 table.condensed th {
   border-right-width: 0;
-  padding: 0.7rem 0.7rem 0.7rem;
+  padding: 0.7rem 0.466666666666667rem 0.7rem;
 }
 table.striped {
 /* default - no border */
@@ -865,8 +877,8 @@ table.striped.v-border th {
 #page-content .post-content div.example {
   border: #ddd solid 0.1rem;
   padding-bottom: 2.1rem;
-  padding-left: 2.1rem;
-  padding-right: 2.1rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
   padding-top: 2.1rem;
 }
 #page-content .post-content div.example :last-child {
@@ -909,7 +921,7 @@ table.striped.v-border th {
 }
 #page-content .post-footer .post-tags p {
   float: left;
-  padding-right: 2.1rem;
+  padding-right: 1.4rem;
 }
 #page-content .post-footer .post-tags ul {
   list-style: none;
@@ -1022,7 +1034,7 @@ table.striped.v-border th {
   list-style: none;
 }
 #page-footer #elsewhere ul li {
-  padding-left: 3.15rem;
+  padding-left: 2.8rem;
   background-position: 0 50%;
   background-repeat: no-repeat;
   background-size: 1.6rem 1.6rem;
@@ -1041,6 +1053,8 @@ table.striped.v-border th {
 }
 #page-footer #recommendedread ul {
   list-style: none;
+  margin-top: -2.1rem;
+  padding-left: 10.4rem;
 }
 #page-footer #recommendedread ul li p {
   margin-bottom: 2.1rem;
