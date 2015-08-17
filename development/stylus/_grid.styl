@@ -11,8 +11,9 @@
     ----------------------------------------    */
 /* container - serves as a row for a set of columns */
 .container
-	/* clearfix */
 	width: 100%
+	max-width: 100.0rem
+	/* clearfix */
 	clearfix()
 
 /* columns */
@@ -29,8 +30,8 @@
 .c-10,
 .c-11,
 .c-12
-	margin-left: lh-s
-	margin-right: lh-s
+	margin-left: hs-s
+	margin-right: hs-s
 	vertical-align: top 
 	zoom: 1
 
@@ -111,7 +112,17 @@ picture
 		margin-top: lh-s 
 		padding-top: lh-s
 
-/*  */
+/* styling for slightly broader mobile devices */
+@media all and (min-width: bp-s-min) and (max-width: bp-s-max)
+	#page-footer 
+		div.container 
+			.c-06 
+				float: left
+				margin-left: hs-s
+				margin-right: 0
+				width: 41.90%
+			&:last-child
+				margin-right: hs-s
 
 /*	PAGE HEADER (#page-header)
     ----------------------------------------    */
