@@ -166,4 +166,12 @@ picture {
     ----------------------------------------    */
 #page-header {
 	margin-top: $lh-s;
+	img {
+		border: $c-w solid $bd-w-n;
+		border-radius: ($lh-s * 4);			/* 84px */
+		display: block;
+		margin: 0 auto $lh-s;
+		max-height: ($lh-s * 8);				/* 168px */
+		max-width: ($lh-s * 8);					/* 168px */			
+	}
 }

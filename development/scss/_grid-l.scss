@@ -160,6 +160,7 @@
 		/* recommended reading block */
 		#recommendedread {
 			img {
+				border-width: $bd-w-t-l;
 				max-height: ($lh-l * 6);				/* 168px */
 				max-width: ($lh-l * 4);					/* 112px */
 			}
@@ -171,5 +172,11 @@
 	    ----------------------------------------    */
 	#page-header {
 		margin-top: $lh-l;
+		img {
+			border-radius: ($lh-l * 4);					/* 112px */
+			margin-bottom: $lh-l;
+			max-height: ($lh-l * 8);					/* 224px */
+			max-width: ($lh-l * 8);						/* 224px */
+		}
 	}								
 }

@@ -155,6 +155,7 @@
 		/* recommended reading block */
 		#recommendedread {
 			img {
+				border-width: $bd-w-t-m;
 				max-height: ($lh-m * 6);				/* 150px */
 				max-width: ($lh-m * 4);					/* 100px */
 			}
@@ -166,6 +167,12 @@
 	    ----------------------------------------    */
 	#page-header {
 		margin-top: $lh-m;
+		img {
+			border-radius: ($lh-m * 4);					/* 100px */
+			margin-bottom: $lh-m;
+			max-height: ($lh-m * 8);					/* 200px */
+			max-width: ($lh-m * 8);						/* 200px */
+		}
 	}
 }
 
