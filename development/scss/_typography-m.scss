@@ -1,0 +1,367 @@
+@media all and (min-width: $bp-m-min) and (max-width: $bp-m-max) {
+	/*  BODY
+        ----------------------------------------    */   
+    body {
+    	font-size: $fs-m3;
+    	line-height: $lh-m;
+    }
+
+
+    /*  COMMON STYLES 
+        ----------------------------------------    */
+    /* Set common bottom margin for block level elements */
+    blockquote,
+    dl,
+    ol, 
+    p,
+    pre,
+    table,
+    ul,
+    .footnotes {
+        margin-bottom: $lh-m;
+    }
+    /* set common padding and borders for blockquotes and preformatted text */
+	blockquote,
+	pre {
+		padding: 0 $lh-m;
+	}
+
+
+	/*  ASIDES, BLOCKQUOTES AND QUOTES
+    	----------------------------------------    */
+	/* asides and pull quotes */
+	aside {
+		&.pull-quote {
+			border-top-width: ($bd-w-t-m * 2);
+			font-size: $fs-m6; 
+			line-height: ($lh-m * 1.4);				/* 35px */ 
+			padding: ($lh-m - $bd-w-t-m * 2) 0 $lh-m;
+			&.left, 
+			&.right {
+				width: 45.9459%;
+			}
+			&.left {
+				float: left;
+				margin-left: -10.3287%;
+				margin-right: $hs-m;
+			}
+			&.right {
+				float: right;
+				margin-left: $hs-m;
+				margin-right: -10.3287%;
+			}
+		}
+	}
+	/* blockquotes */
+	blockquote {
+		border-left-width: ($bd-w-t-m * 2);
+		margin-left: ($bd-w-t-m * -2);
+		padding-bottom: $lh-m;
+		padding-top: $lh-m;
+		footer {
+			cite:before {
+				padding-right: ($hs-m * 2/5);		/* 10px */
+			}
+		}
+	}
+
+
+	/*  CAPTIONS 
+	    ----------------------------------------    */
+	caption,
+	figcaption,
+	.caption {
+		font-size: $fs-m2;
+	}
+
+
+	/*  CODE AND PREFORMATTED TEXT 
+	    ----------------------------------------    */
+	code {
+		font-size: $fs-m2;
+	}
+	/* pre */
+	pre[class*="language-"] {
+		line-height: $lh-m;
+		margin: 0 0 $lh-m;
+		padding: $lh-m $hs-m;
+	}
+
+
+	/*  FOOTNOTES 
+	    ----------------------------------------    */
+	.footnotes {
+		hr.w-50 {
+			margin: ($lh-m * 2) 0 $lh-m;
+		}
+		ol {
+			font-size: $fs-m2;
+		}
+	}
+
+
+	/*  HEADINGS
+	    ----------------------------------------    */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: $lh-m;
+	}
+	h4,
+	h5,
+	h6 {
+		line-height: $lh-m;
+	}
+	h1 {
+		font-size: $fs-m8;						/* 36px */
+		line-height: ($lh-m * 2);				/* 50px */
+		padding: 0;
+	}
+	h2 {
+		font-size: $fs-m7;						/* 28px */
+		line-height: ($lh-m * 1.6);				/* 40px */
+		padding-bottom: ($lh-m * 0.2);			/* 5px */
+		padding-top: ($lh-m * 0.2);				/* 5px */
+	}
+	h3 {
+		font-size: $fs-m6;						/* 24px */
+		line-height: ($lh-m * 1.4);				/* 35px */
+		padding-bottom: ($lh-m * 0.3);			/* 5px */
+		padding-top: ($lh-m * 0.3);				/* 5px */
+	}
+	h4 {
+		font-size: $fs-m5;						/* 21px */
+		line-height: ($lh-m * 1.2);				/* 30px */
+		padding-bottom: ($lh-m * 0.4);			/* 10px */
+		padding-top: ($lh-m * 0.4);				/* 10px */
+	}
+	h5 {
+		font-size: $fs-m4;						/* 18px */
+		line-height: ($lh-m * 1.08);			/* 27px */
+		padding-bottom: ($lh-m * 0.2);			/* 5px */
+		padding-top: ($lh-m * 0.72);			/* 18px */
+	}
+	h6 {
+		font-family: $ff-gotham, "Proxima Nova", "Gibson", "Helvetica", Arial, sans-serif;
+		font-size: $fs-m3;
+	}
+
+
+	/*  HORIZONTAL RULES 
+	    ----------------------------------------    */
+	hr {
+		margin: $lh-m 0;
+		&.w-50,
+		&.w-75 {
+			margin: $lh-m auto;
+		}
+	}
+
+
+	/*  INLINE STYLES
+	    ----------------------------------------    */
+	/* small text */
+	small {
+		font-size: $fs-m2;
+	}
+	/* subscript and superscript */
+	sub,
+	sup {
+		font-size: $fs-m1;
+	} 
+
+
+	/*  LISTS
+	    ----------------------------------------    */
+	/* common styles for lists */
+	ol,
+	ul {
+		margin-left: 0;
+		& > li > ol,
+		& > li > ul {
+			/* second level list */
+			margin-left: $hs-m;
+			& > li > ol,
+			& > li > ul {
+				/* third level list */
+				margin-left: $hs-m;
+			}
+		}
+	}
+	/* definition lists */
+	dl {
+		dd {
+			margin-left: $hs-m;
+		}
+		&.in-line {
+			margin-bottom: $lh-m;
+		}
+	}
+
+
+	/*  TABLES
+	    ----------------------------------------    */
+	table {
+		caption {
+			line-height: $lh-m;
+		}
+		td,
+		th {
+			line-height: $lh-m;
+			padding: ($lh-m/2) ($hs-m/3);
+		}
+		/* condensed table to take up less space */
+		&.condensed {
+			td,
+			th {
+				padding: ($lh-m/4) ($hs-m/3);
+			}
+		}
+	}
+
+
+	/*	PAGE CONTENT (#page-content)
+	    ----------------------------------------    */
+	#page-content {
+	    /* archive header (for archives) */
+	    .archive-header {
+	        h1 {
+	        	font-size: $fs-m2;
+	        	line-height: $lh-m;
+	        }
+	    }
+	    /* page navigation (for archives, index) */
+	    .pagination {
+	        nav {
+	            ul {
+	            	li {
+	            		border-radius: ($lh-m/5); 
+	            		& + li {
+	            			margin-left: $lh-m;
+	            		}
+	            		a {
+	            			line-height: $lh-m;
+	            			padding: ($lh-m/2) $hs-m;
+	            		}
+	            	}
+	            }
+	        }
+	    }
+	    /* article/page content */
+	    .post-content {
+	    	div {
+	    		/* examples (visually distinct from regular text) */
+	    		&.example {
+	    			border-radius: ($lh-m/5);
+	    			padding: $lh-m $hs-m;
+	    		}
+	    	}
+	    	p {
+	    		&.lede {
+	    			font-size: $fs-m5;
+					line-height: ($lh-m * 1.2);				/* 30px */
+					padding-bottom: ($lh-m * 0.4);			/* 10px */
+					padding-top: ($lh-m * 0.4);				/* 10px */
+	    		}
+	    	}
+	    }
+	    /* article/page footer */
+	    .post-footer {
+	    	/* article metadata (date published, author) */
+	    	.post-metadata {
+	    		p {
+	    			/* time formatting */
+	    			time {
+	    				font-size: $fs-m2;
+	    			}
+	    		}
+	    	}
+	    	/* tags */
+	    	.post-tags {
+	    		p {
+	    			padding-right: $hs-m;
+	    		}
+	    		ul {
+	    			li {
+	    				line-height: $lh-m;
+	    			}
+	    		}
+	    	}
+	    }
+	    /* article/page header */
+	    .post-header {
+	    	/* article headings (for archives, index) */
+	    	h2 {
+	    		padding-bottom: 0;
+	    		padding-top: ($lh-m * 0.4);
+	    	}
+	    	/* article metadata (date published, author) */
+	    	p {
+	    		time {
+	    			font-size: $fs-m2;
+	    		}
+	    	}
+    	}
+	}
+
+
+	/*	PAGE FOOTER (#page-footer)
+	    ----------------------------------------    */
+	#page-footer {
+		/* common styles */
+		p,
+		ul {
+			font-size: $fs-m4;
+		}
+		/* headings */
+		h1 {
+			font-size: $fs-m3;
+			line-height: $lh-m;
+			margin-bottom: $lh-m;
+		}
+		/* small (used for "more" links) */
+		small {
+			border-radius: ($lh-m/5);
+			padding: ($lh-m/5);
+		}
+		/* elsewhere on the web block */
+		#elsewhere {
+			ul {
+				li {
+					background-size: $fs-m4 $fs-m4;
+					padding-left: ($hs-m * 2);
+				}
+			}
+		}
+		/* recommended reading block */
+		#recommendedread {
+			ul {
+				padding-left: ($lh-m * 5);
+				li {
+					p {
+						margin-bottom: $lh-m;
+					}
+				}
+			}
+		}
+		/* rights block */
+		#rights {
+			p {
+				font-size: $fs-m3;
+			}
+		}
+	}
+
+
+	/*	PAGE HEADER (#page-header)
+	    ----------------------------------------    */
+	#page-header {
+		h1 {
+			font-size: $fs-m9;
+			line-height: ($lh-m * 2);
+		}
+	}
+}

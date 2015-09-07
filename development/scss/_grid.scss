@@ -1,0 +1,169 @@
+/*  BASIC GRID STYLES 
+    ----------------------------------------    */
+.hidden {
+	display: none;
+}
+
+/* clearfix class */
+.clearfix {
+	@include clearfix();
+}
+
+
+/* 	COLUMNS 
+	----------------------------------------    */
+/* container - serves as a row for a set of columns */
+.container {
+	margin: 0 auto;
+	max-width: 100.0rem; 	/* 1000px */
+	width: 100%;
+	/* clearfix */
+	@include clearfix();
+}
+
+/* columns */
+/* reset all columns to take up full width of the container */
+.c-01,
+.c-02,
+.c-03,
+.c-04,
+.c-05,
+.c-06,
+.c-07,
+.c-08,
+.c-09,
+.c-10,
+.c-11,
+.c-12 {
+	margin-left: $hs-s;
+	margin-right: $hs-s;
+	vertical-align: top;
+	zoom: 1;
+}
+/* reset all offsets to zero */
+.off-01 {
+	padding-left: 0;
+}
+
+
+/*  ACCESSIBILITY STYLES
+    ----------------------------------------    */
+.accessibility {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+
+
+/*	FIGURES, IMAGES, AND PICTURES
+	----------------------------------------    */
+figure, 
+picture {
+	margin-bottom: $lh-s;
+	padding: 0;	
+    /* reset all images to the same width */
+    &.l,
+    &.m,
+    &.x {
+    	margin: 0 auto $lh-s;
+    	max-width: 54.0rem;				/* 540px -- using iPhone 5 landscape as the maximum size */
+    }
+    &.s {
+    	margin: 0 auto $lh-s;
+    	max-width: 38.6rem; 			/* 386px -- using iPhone 6 Plus as the maximum size */
+    }
+	img {
+		width: 100%;
+	}
+}
+
+
+/*	PAGE CONTENT (#page-content)
+    ----------------------------------------    */
+#page-content {
+	margin-bottom: $lh-s;
+	margin-top: $lh-s;
+    /* archive header (for archives) */
+    .archive-header {
+    	margin-bottom: $lh-s;
+    	padding-top: $lh-s;
+    }
+    /* page navigation (for archives, index) */
+    .pagination {
+    	padding-top: $lh-s;
+    }
+    .post-footer {
+    	div {
+    		border-top: $c-g5 solid $bd-w-n;
+    		padding-bottom: $lh-s;
+    		padding-top: $lh-s;
+    	}
+    }
+}
+
+
+/*	PAGE FOOTER (#page-footer)
+    ----------------------------------------    */
+#page-footer {
+	background-color: $c-b;
+	padding-top: $lh-s;
+	.container {
+		& > div {
+			padding-bottom: $lh-s; 
+		}
+	}
+	img {
+		display: block;
+		float: left;
+	}
+	/* about me block */
+	#me {
+		img {
+			border: $c-b solid $bd-w-n;
+			border-radius: ($lh-s * 5/2);			/* 52.5px */
+			margin-right: ($hs-s - 0.2rem);
+			max-height: ($lh-s * 5);				/* 105px  */
+			max-width: ($lh-s * 5);					/* 105px  */
+		}
+	}
+	/* recommended reading block */
+	#recommendedread {
+		img {
+			border: $c-b solid $bd-w-t-s;
+			max-height: ($lh-s * 6);				/* 126px */
+			max-width: ($lh-s * 4);					/* 84px */
+		}
+	}
+	/* rights block */
+	#rights {
+		border-top: $c-g2 solid $bd-w-n;
+		margin-top: $lh-s;
+		padding-top: $lh-s;
+	}
+}
+
+/* styling for slightly broader mobile devices */
+@media all and (min-width: $bp-s-min) and (max-width: $bp-s-max) {
+	#page-footer {
+		.container {
+			.c-06 {
+				float: left;
+				margin-left: $hs-s;
+				margin-right: 0;
+				width: 41.9000%;
+			}
+			&:last-child {
+				margin-right: $hs-s;
+			}
+		}
+	}
+}
+
+
+/*	PAGE HEADER (#page-header)
+    ----------------------------------------    */
+#page-header {
+	margin-top: $lh-s;
+}

@@ -1,0 +1,175 @@
+/*	BASIC LARGE DEVICE GRID STYLES 
+	----------------------------------------	*/
+@media all and (min-width: $bp-l-min) {
+	/*	BASIC GRID STYLES
+		----------------------------------------    */
+	.container {
+		max-width: 92.5rem;
+		min-width: 77.8rem;
+	}
+	.c-01,
+	.c-02,
+	.c-03,
+	.c-04,
+	.c-05,
+	.c-06,
+	.c-07,
+	.c-08,
+	.c-09,
+	.c-10,
+	.c-11,
+	.c-12 {
+		float: left;
+		margin-left: $hs-l;
+		margin-right: 0;
+	}
+	.c-01 {
+		width: 5.4054%;
+	}
+	.c-02 {
+		width: 13.5135%;
+	}
+	.c-03 {
+		width: 21.6216%;
+	}
+	.c-04 {
+		width: 29.7297%;
+	}
+	.c-05 {
+		width: 37.8378%;
+	}
+	.c-06 {
+		width: 45.9459%;
+	}
+	.c-07 {
+		width: 54.0541%;
+	}	
+	.c-08 {
+		width: 62.1622%;
+	}
+	.c-09 {
+		width: 70.2703%;
+	}
+	.c-10 {
+		width: 78.3784%;
+	}
+	.c-11 {
+		width: 86.4865%;
+	}
+	.c-12 {
+		width: 94.5946%;
+	}	
+	.off-01 {
+		padding-left: 8.1081%;
+	}	
+
+
+	/*	FIGURES, IMAGES, AND PICTURES
+		----------------------------------------    */
+	figure,
+	picture {
+		margin-bottom: $lh-l;
+		/* large figures and images are still constrained */
+		&.l,
+		&.m,
+		&.s,
+		&.x {
+			margin-bottom: $lh-l;
+		}
+		/* large figures and images */
+		&.l {
+			max-width: 72.5rem;
+		}
+		/* medium figures and images */
+		&.m {
+			max-width: 57.5rem;
+		}
+		/* small figures and images */ 
+		&.s {
+			margin: 0;
+			max-width: 35.0rem;
+			&.left {
+				float: left;
+				margin-right: $hs-l;
+				&.pull {
+					margin-left: -10.3081%;
+				}
+			}
+			&.right {
+				float: right;
+				margin-left: $hs-l;
+				&.pull { 
+					margin-right: -10.3081%;
+				}
+			}
+		}
+		/* extra large figures and images */
+		&.x {
+			margin: 0 -10.3081% $lh-l;
+			max-width: 87.5rem;
+		}
+	}
+
+
+	/*	PAGE CONTENT (#page-content)
+	    ----------------------------------------    */
+	#page-content {
+		margin-bottom: $lh-l;
+		margin-top: $lh-l;
+	    /* archive header (for archives) */
+	    .archive-header {
+	    	margin-bottom: $lh-l;
+	    	padding-top: $lh-l;
+	    }
+	    /* page navigation (for archives, index) */
+	    .pagination {
+	    	padding-top: $lh-l;
+	    }
+	    .post-footer {
+	    	div {
+	    		padding-bottom: $lh-l;
+	    		padding-top:$lh-l;
+	    		&.post-sharing {
+	    			p {
+	    				margin-right: $hs-l;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+
+	/*	PAGE FOOTER (#page-footer)
+		----------------------------------------    */
+	#page-footer {
+		padding-top: $lh-l;
+		.container {
+			& > div {
+				padding-bottom: $lh-l;
+			}
+		}
+		/* about me block */
+		#me {
+			img {
+				border-radius: ($lh-l * 5/2);			/* 70.5px */
+				margin-right: ($hs-l - 0.2rem);
+				max-height: ($lh-l * 5);				/* 140px */
+				max-width: ($lh-l * 5);					/* 140px */
+			}
+		}
+		/* recommended reading block */
+		#recommendedread {
+			img {
+				max-height: ($lh-l * 6);				/* 168px */
+				max-width: ($lh-l * 4);					/* 112px */
+			}
+		}
+	}
+
+
+	/*	PAGE HEADER (#page-header)
+	    ----------------------------------------    */
+	#page-header {
+		margin-top: $lh-l;
+	}								
+}

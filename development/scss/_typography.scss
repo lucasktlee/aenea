@@ -1,0 +1,786 @@
+/*  BODY AND HTML
+    ----------------------------------------    */
+html {
+	font-size: $fs-base;
+}
+body {
+	background-color: $c-w;
+	color: $c-g2;
+	font-family: $ff-mercury-ssm, "Garvis", "Arnhem", Georgia, serif;
+	font-size: $fs-s3;
+	font-weight: $fw-book;
+	@include hyphenate("auto");
+	line-height: $lh-s;
+	text-align: left;
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+}
+
+
+/*  COMMON STYLES
+    ----------------------------------------    */
+/* zero out margins and padding */
+article,
+aside,
+blockquote,
+div,
+dl,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+ol,
+p,
+picture,
+pre,
+section,
+ul {
+	margin: 0;
+	padding: 0;
+}
+/* set common bottom margin for block level elements */
+blockquote,
+div.example,
+dl,
+ol,
+p,
+pre,
+table,
+ul,
+.footnotes {
+	margin-bottom: $lh-s;
+}
+/* set common padding and borders for blockquotes and preformatted text */
+blockquote,
+pre {
+	padding: 0 $lh-s;
+}
+/* remove hyphenation for certain HTML elements */
+abbr,
+blockquote,
+code,
+kbd,
+pre,
+q,
+samp,
+var {
+	@include hyphenate("none");
+}
+
+
+/*  ASIDES, BLOCKQUOTES AND QUOTES
+    ----------------------------------------    */
+/* asides and pull quotes */
+aside {
+	&.pull-quote { 
+		border-top: $c-v2 solid ($bd-w-t-s * 2);
+		color: $c-b;
+		font-size: $fs-s6;
+		line-height: ($lh-s * 5/3);					/* 35px */
+		padding: ($lh-s - $bd-w-t-s * 2) 0 $lh-s;
+		/* for small devices there is no room for left and right pull quotes */
+		&.left,
+		&.right {
+			border-left-width: 0;
+			border-right-width: 0;
+			float: none;
+			margin-left: 0;
+			margin-right: 0;
+			text-align: left;
+		}
+	}
+}
+/* blockquotes */
+blockquote {
+	border-left: $c-v2 solid ($bd-w-t-s * 2);
+	margin-left: ($bd-w-t-s * -2);
+	padding-bottom: $lh-s;
+	padding-top: $lh-s;
+	footer {
+		text-align: right;
+		cite:before {
+			content: "\2014";
+			padding-right: ($hs-s * 1/2);			/* 7px */
+		}
+	}
+	:last-child {
+		margin-bottom: 0
+	}
+}
+/*	inline quotes */
+q:after,
+q:before {
+	content: none;
+}
+html[lang="en"],
+html[lang="en-US"] {
+	q:after {
+		content: "\201D";
+	}
+	q:before {
+		content: "\201C";
+	}
+	q {
+		> q:after {
+			content: "\2019";
+		}
+		> q:before {
+			content: "\2018";
+		}
+	}
+}
+
+
+/*  CAPTIONS 
+    ----------------------------------------    */
+caption,
+figcaption,
+.caption {
+	color: $c-g3;
+	font-size: $fs-s2;
+	text-align: left;
+	span { 
+		text-transform: uppercase;
+	}
+}
+
+
+/*  CODE AND PREFORMATTED TEXT 
+    ----------------------------------------    */
+code {
+	font-family: "Consolas", $ff-lucida-console, $ff-andale-mono, monospace;
+	font-size: $fs-s2;
+}
+/* pre */
+pre[class*="language-"] {
+	line-height: $lh-s;
+	margin: 0 0 $lh-s;
+	padding: $lh-s $hs-s;
+}
+
+
+/*  FIGURES, IMAGES, AND PICTURES  
+    ----------------------------------------    */
+figure,
+picture {
+	a {
+		& > img {
+			border-width: 0;
+		}
+	}
+}
+
+
+/*  FOOTNOTES 
+    ----------------------------------------    */
+.footnotes {
+	@include clearfix();
+	dl.in-line {
+		margin-bottom: 0;
+		dd + dt {
+			&:before {
+				content: "\A";
+				white-space: pre;
+			}
+		}
+	}
+	hr.w-50 {
+		margin: ($lh-s * 2) 0 $lh-s;
+	}
+	ol {
+		font-size: $fs-s2;
+		margin-bottom: 0;
+	}
+}
+
+
+/*  HEADINGS
+    ----------------------------------------    */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $ff-gotham, "Proxima Nova", "Gibson", "Helvetica", Arial, sans-serif;
+	font-style: normal;
+	font-weight: $fw-bold;
+	margin-bottom: $lh-s;
+}
+h1,
+h2,
+h3 {
+	color: $c-b;
+}
+h4,
+h5,
+h6 {
+	color: $c-g1;
+	line-height: $lh-s;
+}
+h1 {
+	font-size: $fs-s8;							/* 28px */
+	line-height: ($lh-s * 1.857); 				/* 39px */
+	padding-bottom: ($lh-s * 1/14);				/* 1.5px */
+	padding-top: ($lh-s * 1/14);				/* 1.5px */
+}
+h2 {
+	font-size: $fs-s7;							/* 24px */
+	line-height: ($lh-s * 5/3);					/* 35px */
+	padding-bottom: ($lh-s * 1/6);				/* 3.5px */
+	padding-top: ($lh-s * 1/6);					/* 3.5px */
+}
+h3 {
+	font-size: $fs-s6;							/* 21px */
+	line-height: ($lh-s * 10/7);				/* 30px */			
+	padding-bottom: ($lh-s * 2/7);				/* 6px */
+	padding-top: ($lh-s * 2/7);					/* 6px */
+}
+h4 {
+	font-size: $fs-s5;							/* 18px */
+	line-height: ($lh-s * 9/7);					/* 27px */
+	padding-bottom: ($lh-s * 5/14);				/* 7.5px */	
+	padding-top: ($lh-s * 5/14);				/* 7.5px */
+}
+h5 {
+	font-size: $fs-s4;							/* 16px */
+	line-height: ($lh-s * 1.143);				/* 24px */
+	padding-bottom: ($lh-s * 2/7);				/* 6px */
+	padding-top: ($lh-s * 4/7);					/* 12px */
+}
+h6 {
+	font-family: $ff-gotham-ssm, "Proxima Nova", "Gibson", "Helvetica", Arial, sans-serif;
+	font-size: $fs-s3;							/* 14px */
+}
+
+
+/*  HORIZONTAL RULES 
+    ----------------------------------------    */
+hr {
+	border: 0;
+	border-top: $c-g5 solid $bd-w-n;
+	margin: $lh-s 0;
+	&.w-50,
+	&.w-75 {
+		margin: $lh-s auto;
+	}
+	&.w-50 {
+		width: 50%;
+	}
+	&.w-75 {
+		width: 75%;
+	}
+}
+
+
+/*  INLINE STYLES
+    ----------------------------------------    */
+/* abbreviations */
+abbr {
+	letter-spacing: $bd-w-n;
+	text-transform: uppercase;
+	&[title] {
+		border-bottom: $c-g5 dotted $bd-w-n;
+	}
+}
+/* citations */
+cite {
+	font-style: italic;
+}
+/* deleted and inserted text */
+del {
+	color: $c-g3;
+	text-decoration: line-through;
+}
+ins {
+	color: $c-b;
+	text-decoration: underline;
+}
+/* small text */
+small {
+	font-size: $fs-s2;
+}
+/* subscripts and superscripts */
+sub,
+sup {
+	font-size: $fs-s1;
+	position: relative;
+	vertical-align: baseline
+}
+sub {
+	top: 0.8ex;
+}
+sup {
+	bottom: 1.0ex;
+}
+
+
+/*  LINKS
+    ----------------------------------------    */
+a {
+	border-bottom: solid $bd-w-n;
+	text-decoration: none;
+	&:link,
+	&:visited {
+		border-bottom-color: $c-r3;
+		color: $c-r3;
+	}
+	&:active,
+	&:hover {
+		border-bottom-color: $c-r1;
+		color: $c-r1;
+	}
+}
+
+
+/*  LISTS
+    ----------------------------------------    */
+/* common styles for lists */
+ol,
+ul {
+	/* first level list */
+	margin-left: $hs-s;
+	& > li > ol,
+	& > li > ul {
+		/* second level list */
+		margin-left: $hs-s;
+		& > li > ol,
+		& > li > ul {
+			/* third level list */
+			margin-left: $hs-s;
+		}
+	}
+}
+/* definition lists */
+dl {
+	dd {
+		margin-left: $hs-s;
+	}
+	dt {
+		font-weight: $fw-bold;
+	}
+	/* in-line definition list */
+	&.in-line {
+		margin-bottom: $lh-s;
+		dd,
+		dt {
+			display: inline;
+			margin: 0;
+		}
+		dt:after { 
+			content: ": ";
+		}
+		dd + dd {
+			&:before {
+				content: ", ";
+				margin-left: -0.4rem;
+			}
+		}
+		dd + dt {
+			&:before {
+				content: "\A\A";
+				white-space: pre;
+			}
+		}
+	}
+}
+/* ordered lists */
+ol {
+	/* first level ordered list */
+	list-style: decimal;
+	& > li > ol {
+		/* second level ordered list */
+		list-style: lower-alpha;
+		& > li > ol {
+			/* third level ordered list */
+			list-style: lower-roman;
+		}
+	}
+}
+/* unordered lists */
+ul { 
+	/* first level unordered list */
+	list-style: disc;
+	& > li > ul {
+		/* second level unordered list */
+		list-style: square; 
+		& > li > ul {
+			/* third level unordered list */
+			list-style: circle;
+		}
+	}
+}
+
+
+/*	PARAGRAPHS 
+    ----------------------------------------    */
+p {
+	text-align: left;
+}
+
+
+/*  TABLES
+    ----------------------------------------    */
+table {
+	border-left: $c-g5 solid $bd-w-n;
+	border-top: $c-g5 solid $bd-w-n;
+	max-width: 100%;
+	caption {
+		caption-side: bottom;
+		line-height: $lh-s;
+		text-align: left;
+	}
+	td,
+	th {
+		border-right: $c-g5 solid $bd-w-n;
+		@include hyphenate("none");
+		line-height: $lh-s;
+		padding: ($lh-s/2) ($hs-s/2);
+	}	
+	tr {
+		border-bottom: $c-g5 solid $bd-w-n;
+	}
+	/* condensed table to take up less space */
+	&.condensed {
+		border-left-width: 0;
+		border-top: $c-g5 solid $bd-w-n;
+		td,
+		th {
+			border-right-width: 0;
+			padding: ($lh-s/3) ($hs-s/2);
+		}
+	}
+	/* striped table for easier readability */
+	&.striped {
+		/* default -- no border */
+		border-left-width: 0;
+		border-top-width: 0;
+		td, 
+		th {
+			border-right-width: 0;
+		}
+		tr {
+			border-bottom-width: 0;
+		}
+		tr:nth-child(odd) {
+			& > td,
+			& > th {
+				background-color: $c-v6;
+			}
+		}
+		/* horizontal border */
+		&.h-border {
+			tr:last-child {
+				& > td, 
+				& > th {
+					border-bottom: $c-v5 solid $bd-w-n;
+				}
+			}
+			tr:nth-child(odd) {
+				& > td,
+				& > th {
+					border-bottom: $c-v5 solid $bd-w-n;
+					border-top: $c-v5 solid $bd-w-n;
+				}
+			}
+		}
+		/* vertical border */
+		&.v-border {
+			border-left: $c-v5 solid $bd-w-n;
+			td,
+			th {
+				border-right: $c-v5 solid $bd-w-n;
+			}
+		}
+	}
+}
+/* responsive wrapper to avoid large tables breaking layout */
+div.responsive-wrapper {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+}
+
+
+/*  MISCELLANEOUS TYPOGRAPHIC STYLES
+    ----------------------------------------    */
+/* text alignment */
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+
+/*	PAGE CONTENT (#page-content)
+    ----------------------------------------    */
+#page-content {
+    /* archive header (for archives) */
+    .archive-header {
+        h1 {
+	    	border-bottom: $c-g5 solid $bd-w-n;
+            @include gotham-ssm-allcaps($c-g4, $fs-s2, $lh-s, 0); 
+        }
+    }
+    /* page navigation (for archives, index) */
+    .pagination {
+        nav {
+            ul {
+                list-style: none;
+                margin-bottom: 0;
+                margin-left: 0;
+                text-align: center;
+                li {
+                    border: $c-g5 solid $bd-w-n;
+                    border-radius: ($lh-s/7);
+                    display: inline-block;
+                    & + li {
+                    	margin-left: $lh-s;
+                    }
+                    a {
+                    	border-bottom-width: 0;
+                    	display: block;
+                    	line-height: $lh-s;
+                    	padding: ($lh-s/2) $hs-s;
+                    }
+                }
+            }
+        }
+    }
+    /* article/page content */
+    .post-content {
+    	div {
+    		/* examples (visually distinct from regular text) */
+    		&.example {
+    			border: $c-g5 solid $bd-w-n;
+    			border-radius: ($lh-s/7);
+    			padding: $lh-s $hs-s;
+    			:last-child {
+    				margin-bottom: 0
+    			}
+    		}
+    	}
+    	p {
+    		/* lede paragraph */
+    		&.lede {
+    			color: $c-b;
+    			font-size: $fs-s5;
+				line-height: ($lh-s * 9/7);					/* 27px */
+				padding-bottom: ($lh-s * 5/14);				/* 7.5px */	
+				padding-top: ($lh-s * 5/14);				/* 7.5px */
+    		}
+    	}
+    }
+    /* article/page footer */
+    .post-footer {
+	    /* common styles for post-footer elements */
+	    a {
+	    	border-bottom-width: 0;
+	    }
+	    p,
+	    ul {
+	    	margin-bottom: 0
+	    }
+    	/* article metadata (date published, author) */
+    	.post-metadata {
+    		p {
+    			/* time formatting */
+    			time {
+    				@include gotham-ssm-allcaps($c-g4, $fs-s2);
+    			}
+    		}	
+    	}
+    	/* comment on twitter */
+    	.post-sharing {
+    		p {
+    			a {
+    				&:link,
+					&:visited {
+						color: $c-g4;
+					}
+					&:active,
+					&:hover {
+						color: $c-g3;
+					}
+    			}
+    		}
+    	}
+    	/* tags */
+    	.post-tags {
+    		p {
+    			float: left;
+    			padding-right: $hs-s;
+    		}
+			ul {
+				list-style: none;
+				margin-left: 0;
+				li {
+					display: inline-block;
+					line-height: $lh-s;
+					&:after {
+						content: ", ";
+					}
+					&:last-child {
+						&:after {
+							content: "."
+						}
+					}
+				}
+			}
+    	}
+    }
+    /* article/page header */
+    .post-header {
+    	/* article headings (for archives, index) */
+    	h2 {
+    		@include hyphenate("none");
+    		margin-bottom: 0;
+    		margin-top: 0;
+    		padding-bottom: 0;
+    		padding-top: ($lh-s * 1/3);
+    		a {
+    			border-bottom-width: 0;
+    			&:link,
+    			&:visited {
+    				color: $c-b;
+    			}
+    			&:active,
+    			&:hover {
+    				color: $c-r3;
+    			}
+    		}
+    	}
+    	/* article metadata (date published, author) */
+    	p {
+    		time {
+    			@include gotham-ssm-allcaps($c-g4, $fs-s2);
+    		}
+    	}
+    	/* change color of <time> element when hovering over .post-header */
+    	&:hover {
+    		time {
+    			color: $c-g3;
+    		}
+    	}
+    }
+}
+
+
+/*	PAGE FOOTER (#page-footer)
+    ----------------------------------------    */
+#page-footer {
+	/* common styles */
+	p,
+	ul {
+		color: $c-g4;
+		font-size: $fs-s4;
+		@include hyphenate("none");
+		margin-bottom: 0;
+		margin-left: 0;
+	}
+	/* links */
+	a {
+		border-bottom-width: 0;
+		&:link,
+		&:visited {
+			color: $c-r3;
+		}
+		&:active,
+		&:hover { 
+			color: $c-w;
+		}
+	}
+	/* headings */
+	h1 {
+		@include gotham-ssm-allcaps($c-w, $fs-s3, $lh-s, $lh-s);		
+	}
+	/* small (used for "more" links) */
+	small {
+		background-color: $c-g1;
+		border-radius: ($lh-s/7);
+		font-family: $ff-gotham-ssm, "Proxima Nova", "Gibson", "Helvetica", Arial, sans-serif;
+		padding: ($lh-s/7);
+		text-transform: uppercase;
+	}
+	ul {
+		list-style: none;
+	}
+	/* elsewhere on the web block */
+	#elsewhere {
+		ul {
+			li {
+				padding-left: ($hs-s * 2);
+				background-position: 0 50%;
+				background-repeat: no-repeat;
+				background-size: $fs-s4 $fs-s4;
+				&.i-500px {
+					background-image: url("../images/icons/icon-500px-@2x.png");
+				}
+				&.i-github {
+					background-image: url("../images/icons/icon-github-@2x.png");
+				}
+				&.i-linkedin {
+					background-image: url("../images/icons/icon-linkedin-@2x.png");
+				}
+				&.i-twitter {
+					background-image: url("../images/icons/icon-twitter-@2x.png");
+				}
+			}
+		}	
+	}
+	/* recommended reading block */
+	#recommendedread {
+		ul {
+			padding-left: ($lh-s * 5);
+			li {
+				p {
+					margin-bottom: $lh-s;
+				}
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	/* rights block */
+	#rights {
+		p {
+			font-size: $fs-s3;
+		}
+	}
+}
+
+
+/*	PAGE HEADER (#page-header)
+    ----------------------------------------    */
+#page-header {
+	h1 {
+		font-size: $fs-s9;
+		line-height: ($lh-s * 2);
+		margin: 0;
+		text-align: center;
+		text-shadow: 0.1rem 0.1rem 0 $c-g5;
+		text-transform: uppercase;
+		a {
+			border-bottom-width: 0;
+			&:link,
+			&:visited {
+				color: $c-b;
+			}
+			&:active,
+			&:hover {
+				color: $c-r3;
+			}
+		}		
+	}
+}
