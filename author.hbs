@@ -1,8 +1,10 @@
 {{!< default}}
-<header class="archive-header">
-	{{#author}}
-		<h1>{{name}}</h1>
-	{{/author}}
-</header>
+<div class="container">
+	<header class="c-10 off-01 archive-header">
+		{{#author}}
+			<h1>{{name}}</h1>
+		{{/author}}
+	</header>
+</div>
 {{> "loop"}}
 {{pagination}}
