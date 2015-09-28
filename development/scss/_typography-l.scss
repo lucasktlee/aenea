@@ -257,6 +257,10 @@
 	    		&.example {
 	    			border-radius: ($lh-l/4);
 	    			padding: $lh-l $hs-l;
+	    			ul,
+	    			ol {
+	    				margin-left: $hs-l;
+	    			}
 	    		}
 	    	}
 	    	p {
