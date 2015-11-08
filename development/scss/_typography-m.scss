@@ -220,6 +220,23 @@
 				padding: ($lh-m/4) ($hs-m/3);
 			}
 		}
+		/* ensure that ordered and unordered lists stay within table  */
+		td {
+			ul, 
+			ol {
+				margin-left: $hs-m;
+				& > li > ol,
+				& > li > ul {
+					/* second level list */
+					margin-left: $hs-m;
+					& > li > ol,
+					& > li > ul {
+						/* third level list */
+						margin-left: $hs-m;
+					}
+				}
+			}
+		}
 	}
 
 
