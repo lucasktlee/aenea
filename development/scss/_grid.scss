@@ -60,7 +60,8 @@
 /*	FIGURES, IMAGES, AND PICTURES
 	----------------------------------------    */
 figure, 
-picture {
+picture, 
+div.image {
 	margin-bottom: $lh-s;
 	padding: 0;	
     /* reset all images to the same width */
@@ -72,7 +73,7 @@ picture {
     }
     &.s {
     	margin: 0 auto $lh-s;
-    	max-width: 38.6rem; 			/* 386px -- using iPhone 6 Plus as the maximum size */
+    	max-width: 29.4rem; 			/* 294px -- using iPhone 6 Plus as the maximum size */
     }
 	img {
 		width: 100%;

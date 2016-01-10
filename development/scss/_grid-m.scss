@@ -67,7 +67,8 @@
 	/*	FIGURES, IMAGES, AND PICTURES
 		----------------------------------------    */
 	figure,
-	picture {
+	picture, 
+	div.image {
 		margin-bottom: $lh-m;
 		/* large figures and images are still constrained */
 		&.l,
