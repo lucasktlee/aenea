@@ -269,6 +269,17 @@
 	    }
 	    /* article/page content */
 	    .post-content {
+    		/*  asides (visually distinct from regular text) */
+    		aside { 
+    			border-radius: ($lh-l/4);
+    			margin-bottom: $lh-l;
+    			padding: $lh-l $hs-l;
+    			ol,
+    			p,
+    			ul {
+    				font-size: $fs-l2;
+    			}
+	    	}
 	    	div {
 	    		/* examples (visually distinct from regular text) */
 	    		&.example {

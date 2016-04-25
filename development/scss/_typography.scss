@@ -559,14 +559,30 @@ div.responsive-wrapper {
     }
     /* article/page content */
     .post-content {
+    	/*  asides (visually distinct from regular text) */
+    	aside {
+    		border: $c-g5 solid $bd-w-n;
+    		border-radius: ($lh-s/7);
+    		margin-bottom: $lh-s;
+    		padding: $lh-s $hs-s;
+    		:last-child {
+    			margin-bottom: 0;
+    		}
+    		ol, 
+    		p, 
+    		ul {
+    			color: $c-g3;
+    			font-size: $fs-s2;
+    		}
+    	}
+    	/* examples (visually distinct from regular text) */
     	div {
-    		/* examples (visually distinct from regular text) */
     		&.example {
     			border: $c-g5 solid $bd-w-n;
     			border-radius: ($lh-s/7);
     			padding: $lh-s $hs-s;
     			:last-child {
-    				margin-bottom: 0
+    				margin-bottom: 0;
     			}
     		}
     	}
@@ -589,7 +605,7 @@ div.responsive-wrapper {
 	    }
 	    p,
 	    ul {
-	    	margin-bottom: 0
+	    	margin-bottom: 0;
 	    }
     	/* article metadata (date published, author) */
     	.post-metadata {
