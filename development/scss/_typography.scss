@@ -284,9 +284,11 @@ hr {
 /* abbreviations */
 abbr {
 	letter-spacing: $bd-w-n;
+	text-decoration: none;
 	text-transform: uppercase;
 	&[title] {
 		border-bottom: $c-g5 dotted $bd-w-n;
+		text-decoration: none;
 	}
 }
 /* citations */
